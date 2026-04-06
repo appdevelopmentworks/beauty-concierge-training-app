@@ -1,12 +1,40 @@
 {
   "categoryId": "inquiry-handling",
   "overview": "公開サイトの予約・問い合わせ導線と採用サイトの業務紹介をもとに、問い合わせ対応の基礎を確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBC 安心保証制度",
+        "url": "https://www.s-b-c.net/about/hoshou/"
+      },
+      {
+        "label": "SBCメンズ公式トップ",
+        "url": "https://www.sbc-mens.net/"
+      },
+      {
+        "label": "SBC採用 コンシェルジュ募集要項",
+        "url": "https://www.sbc-recruit.com/global/description/p2705/"
+      }
+    ],
+    "general": [
+      {
+        "label": "個人情報保護委員会 FAQ",
+        "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "inquiry-handling-q1",
       "categoryId": "inquiry-handling",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "電話受付時間の理解",
       "prompt": "公開サイトの案内として正しい電話受付の説明はどれですか。",
       "choices": [
@@ -25,6 +53,12 @@
       "categoryId": "inquiry-handling",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "WEB予約の前提",
       "prompt": "公開サイトでは、WEB予約は24時間利用でき、MySBC登録が必要と案内されている。",
       "choices": [
@@ -41,6 +75,12 @@
       "categoryId": "inquiry-handling",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 コンシェルジュ募集要項",
+          "url": "https://www.sbc-recruit.com/global/description/p2705/"
+        }
+      ],
       "title": "問い合わせに紐づく事務作業",
       "prompt": "採用サイトの仕事内容に照らして、コンシェルジュの事務作業に含まれるものはどれですか。",
       "choices": [
@@ -59,6 +99,12 @@
       "categoryId": "inquiry-handling",
       "type": "order",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "予約前相談の流れ",
       "prompt": "公開サイトの予約案内に近い流れとして、最も自然なのはどれですか。",
       "choices": [
@@ -73,10 +119,66 @@
       "tags": ["予約導線", "来院前", "受付"]
     },
     {
+      "id": "inquiry-handling-q5",
+      "categoryId": "inquiry-handling",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 保証制度",
+          "url": "https://www.s-b-c.net/about/hoshou/"
+        }
+      ],
+      "title": "無料メール相談の案内",
+      "prompt": "SBC公開ページのメール相談案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "メール相談は有料で、返信担当は公開されていない" },
+        { "id": "b", "label": "B", "text": "どのようなことでも相談でき、ご希望のドクターや各クリニックのコンシェルジュが返事する案内がある" },
+        { "id": "c", "label": "C", "text": "メール相談は予約済みのお客様限定である" },
+        { "id": "d", "label": "D", "text": "メール相談では予約や相談内容に関する問い合わせは受け付けない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "SBCの公開ページでは、無料メール相談として、ご希望のドクターや各クリニックのコンシェルジュが返事する導線が案内されています。",
+      "difficulty": "easy",
+      "tags": ["メール相談", "問い合わせ", "コンシェルジュ"]
+    },
+    {
+      "id": "inquiry-handling-q6",
+      "categoryId": "inquiry-handling",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "個人情報保護委員会 FAQ",
+          "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+        }
+      ],
+      "title": "本人以外からの問い合わせ",
+      "prompt": "一般的な個人情報保護の考え方では、本人の同意内容を確認せずに家族など第三者へ個人情報を提供してよい。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "提供してよい" },
+        { "id": "false", "label": "×", "text": "原則や同意内容を確認する" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "個人情報保護委員会のFAQでも、第三者提供は本人同意の扱いが重要です。問い合わせ対応では、本人確認や同意範囲を確認せずに情報共有しないことが基本です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "個人情報", "問い合わせ"]
+    },
+    {
       "id": "inquiry-handling-s1",
       "categoryId": "inquiry-handling",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC公式サイト",
+          "url": "https://www.s-b-c.net/"
+        },
+        {
+          "label": "SBCメンズ公式",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "夜間のキャンセル・再予約相談",
       "prompt": "公開サイトにあるMySBCと電話受付案内をもとに、営業時間外の問い合わせを想定します。",
       "situation": "お客様が夜遅い時間に、電話ではなくオンラインでキャンセルや再予約ができるかを気にしています。",

@@ -23,6 +23,8 @@ npm run dev
 - 軽量分岐つきの会話シミュレーション画面
 - 結果画面
 - 進捗ダッシュボード
+- 問題ごとの参照元URL表示
+- カテゴリ別の `SBC独自 / 一般知識` 出題バランス調整
 - LocalStorage による進捗保存
 
 ## 画面パス
@@ -38,6 +40,12 @@ npm run dev
 ## データ構成
 
 問題データは `data/*.json` でカテゴリごとに分かれています。現在の問題文は、SBCの公開サイトにある予約導線、支払い方法、メンズFAQ、コンシェルジュ採用情報などを軸にしつつ、一部は厚生労働省・個人情報保護委員会の公開ガイダンスをもとに、一般的な美容医療コンシェルジュ知識も補っています。
+
+各カテゴリファイルには以下を含めています。
+
+- `referenceSources`: `SBC独自` / `一般知識` ごとの参照元URL
+- `questions[*].knowledgeType`: 問題種別
+- `categories.json` の `knowledgeMix`: 出題順に反映するカテゴリ別比率
 
 - `data/categories.json`
 - `data/reception-flow.json`

@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useProgressOverview } from "@/hooks/use-progress-overview";
-import { getCategory, getQuestionsByCategory } from "@/lib/content";
+import { getCategory, getStudyQuestionsByCategory } from "@/lib/content";
 import { getSessionResult, resetCategoryProgress } from "@/lib/progress-storage";
 
 export default function ResultsPage() {
@@ -17,7 +17,7 @@ export default function ResultsPage() {
   const router = useRouter();
   const progress = useProgressOverview();
   const category = getCategory(params.categoryId);
-  const questions = getQuestionsByCategory(params.categoryId);
+  const questions = getStudyQuestionsByCategory(params.categoryId);
   const [completedAt, setCompletedAt] = useState<string | null>(null);
 
   useEffect(() => {

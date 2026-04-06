@@ -8,7 +8,7 @@ import { QuizCard } from "@/components/quiz-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getCategory, getQuestionByIndex, getQuestionsByCategory } from "@/lib/content";
+import { getCategory, getQuestionByIndex, getQuestionSources, getStudyQuestionsByCategory } from "@/lib/content";
 import { recordQuestionResult } from "@/lib/progress-storage";
 import type { QuizQuestion } from "@/types/content";
 
@@ -18,7 +18,7 @@ export default function QuizPage() {
   const categoryId = params.categoryId;
   const questionIndex = Number.parseInt(params.questionIndex, 10);
   const category = getCategory(categoryId);
-  const questions = getQuestionsByCategory(categoryId);
+  const questions = getStudyQuestionsByCategory(categoryId);
   const question = Number.isNaN(questionIndex) ? null : getQuestionByIndex(categoryId, questionIndex);
   const handledQuestionIdRef = useRef<string | null>(null);
 
@@ -88,6 +88,7 @@ export default function QuizPage() {
         currentIndex={questionIndex}
         totalQuestions={questions.length}
         nextHref={nextHref}
+        sources={getQuestionSources(question as QuizQuestion)}
         onAnswered={(isCorrect) => {
           if (handledQuestionIdRef.current === question.id) {
             return;

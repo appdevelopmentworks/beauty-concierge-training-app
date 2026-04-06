@@ -8,7 +8,7 @@ import { ScenarioCard } from "@/components/scenario-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getCategory, getQuestionsByCategory, getScenarioById } from "@/lib/content";
+import { getCategory, getQuestionSources, getScenarioById, getStudyQuestionsByCategory } from "@/lib/content";
 import { recordQuestionResult } from "@/lib/progress-storage";
 
 export default function ScenarioPage() {
@@ -18,7 +18,7 @@ export default function ScenarioPage() {
   const categoryId = searchParams.get("categoryId") ?? scenario?.categoryId ?? "";
   const questionIndex = Number.parseInt(searchParams.get("questionIndex") ?? "0", 10);
   const category = getCategory(categoryId);
-  const questions = getQuestionsByCategory(categoryId);
+  const questions = getStudyQuestionsByCategory(categoryId);
   const handledScenarioIdRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -55,6 +55,7 @@ export default function ScenarioPage() {
         currentIndex={Number.isNaN(questionIndex) ? 0 : questionIndex}
         totalQuestions={questions.length}
         nextHref={nextHref}
+        sources={getQuestionSources(scenario)}
         onCompleted={(isCorrect) => {
           if (handledScenarioIdRef.current === scenario.id) {
             return;

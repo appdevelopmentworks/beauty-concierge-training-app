@@ -10,12 +10,14 @@ import type {
   CategoryContent,
   Choice,
   Difficulty,
+  KnowledgeMix,
   KnowledgeType,
   Question,
   QuizQuestion,
   ScenarioChoice,
   ScenarioQuestion,
   ScenarioStep,
+  SourceLink,
 } from "@/types/content";
 
 function invariant(condition: unknown, message: string): asserts condition {
@@ -43,6 +45,15 @@ function parseStringArray(value: unknown, path: string) {
   return value.map((item, index) => parseString(item, `${path}[${index}]`));
 }
 
+function parseSourceLink(value: unknown, path: string): SourceLink {
+  invariant(isRecord(value), `${path} must be an object`);
+
+  return {
+    label: parseString(value.label, `${path}.label`),
+    url: parseString(value.url, `${path}.url`),
+  };
+}
+
 function parseDifficulty(value: unknown, path: string): Difficulty {
   invariant(value === "easy" || value === "medium" || value === "hard", `${path} must be a valid difficulty`);
   return value;
@@ -60,6 +71,15 @@ function parseChoice(value: unknown, path: string): Choice {
     id: parseString(value.id, `${path}.id`),
     label: parseString(value.label, `${path}.label`),
     text: parseString(value.text, `${path}.text`),
+  };
+}
+
+function parseKnowledgeMix(value: unknown, path: string): KnowledgeMix {
+  invariant(isRecord(value), `${path} must be an object`);
+
+  return {
+    sbcSpecific: parseNumber(value.sbcSpecific, `${path}.sbcSpecific`),
+    general: parseNumber(value.general, `${path}.general`),
   };
 }
 
@@ -97,6 +117,9 @@ function parseQuestion(value: unknown, path: string): Question {
     categoryId: parseString(value.categoryId, `${path}.categoryId`),
     type: parseString(value.type, `${path}.type`),
     knowledgeType: parseKnowledgeType(value.knowledgeType, `${path}.knowledgeType`),
+    sources: Array.isArray(value.sources)
+      ? value.sources.map((source, index) => parseSourceLink(source, `${path}.sources[${index}]`))
+      : undefined,
     title: parseString(value.title, `${path}.title`),
     prompt: parseString(value.prompt, `${path}.prompt`),
     explanation: parseString(value.explanation, `${path}.explanation`),
@@ -144,16 +167,32 @@ function parseCategory(value: unknown, path: string): Category {
     border: parseString(value.border, `${path}.border`),
     totalQuestions: parseNumber(value.totalQuestions, `${path}.totalQuestions`),
     estimatedMinutes: parseNumber(value.estimatedMinutes, `${path}.estimatedMinutes`),
+    knowledgeMix: parseKnowledgeMix(value.knowledgeMix, `${path}.knowledgeMix`),
   };
 }
 
 function parseCategoryContent(value: unknown, path: string): CategoryContent {
   invariant(isRecord(value), `${path} must be an object`);
   invariant(Array.isArray(value.questions), `${path}.questions must be an array`);
+  invariant(isRecord(value.referenceSources), `${path}.referenceSources must be an object`);
+
+  const referenceSources = value.referenceSources;
 
   return {
     categoryId: parseString(value.categoryId, `${path}.categoryId`),
     overview: parseString(value.overview, `${path}.overview`),
+    referenceSources: {
+      sbcSpecific: Array.isArray(referenceSources.sbcSpecific)
+        ? referenceSources.sbcSpecific.map((source, index) =>
+            parseSourceLink(source, `${path}.referenceSources.sbcSpecific[${index}]`),
+          )
+        : [],
+      general: Array.isArray(referenceSources.general)
+        ? referenceSources.general.map((source, index) =>
+            parseSourceLink(source, `${path}.referenceSources.general[${index}]`),
+          )
+        : [],
+    },
     questions: value.questions.map((question, index) => parseQuestion(question, `${path}.questions[${index}]`)),
   };
 }
@@ -198,7 +237,7 @@ export function getQuestionsByCategory(categoryId: string) {
 }
 
 export function getQuestionByIndex(categoryId: string, questionIndex: number) {
-  return getQuestionsByCategory(categoryId)[questionIndex] ?? null;
+  return getStudyQuestionsByCategory(categoryId)[questionIndex] ?? null;
 }
 
 export function getScenarioById(scenarioId: string) {
@@ -217,6 +256,81 @@ export function getScenarioById(scenarioId: string) {
 
 export function getTotalQuestionCount() {
   return categories.reduce((sum, category) => sum + category.totalQuestions, 0);
+}
+
+export function getQuestionSources(question: Question) {
+  if (question.sources?.length) {
+    return question.sources;
+  }
+
+  const content = getCategoryContent(question.categoryId);
+  if (!content) {
+    return [];
+  }
+
+  return question.knowledgeType === "sbc-specific"
+    ? content.referenceSources.sbcSpecific
+    : content.referenceSources.general;
+}
+
+function getStudyOrderScore(params: {
+  knowledgeType: KnowledgeType;
+  mix: KnowledgeMix;
+  usedCounts: Record<KnowledgeType, number>;
+}) {
+  const { knowledgeType, mix, usedCounts } = params;
+  const denominator = knowledgeType === "sbc-specific" ? mix.sbcSpecific : mix.general;
+  return (usedCounts[knowledgeType] + 1) / denominator;
+}
+
+export function getStudyQuestionsByCategory(categoryId: string) {
+  const category = getCategory(categoryId);
+  const questions = getQuestionsByCategory(categoryId);
+
+  if (!category) {
+    return questions;
+  }
+
+  const pools: Record<KnowledgeType, Question[]> = {
+    "sbc-specific": questions.filter((question) => question.knowledgeType === "sbc-specific"),
+    general: questions.filter((question) => question.knowledgeType === "general"),
+  };
+
+  const usedCounts: Record<KnowledgeType, number> = {
+    "sbc-specific": 0,
+    general: 0,
+  };
+
+  const ordered: Question[] = [];
+
+  while (pools["sbc-specific"].length > 0 || pools.general.length > 0) {
+    const candidates = (["sbc-specific", "general"] as const).filter((type) => pools[type].length > 0);
+    candidates.sort(
+      (left, right) =>
+        getStudyOrderScore({
+          knowledgeType: left,
+          mix: category.knowledgeMix,
+          usedCounts,
+        }) -
+        getStudyOrderScore({
+          knowledgeType: right,
+          mix: category.knowledgeMix,
+          usedCounts,
+        }),
+    );
+
+    const nextType = candidates[0];
+    const nextQuestion = pools[nextType].shift();
+
+    if (!nextQuestion) {
+      break;
+    }
+
+    usedCounts[nextType] += 1;
+    ordered.push(nextQuestion);
+  }
+
+  return ordered;
 }
 
 export function getQuestionTypeLabel(question: Question) {

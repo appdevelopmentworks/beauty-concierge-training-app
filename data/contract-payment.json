@@ -1,12 +1,40 @@
 {
   "categoryId": "contract-payment",
   "overview": "料金ページ・支払い方法ページ・FAQの公開情報をもとに、コンシェルジュが案内する会計基礎を確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBC お支払い方法",
+        "url": "https://www.s-b-c.net/charge_list/payment/"
+      },
+      {
+        "label": "SBCについて",
+        "url": "https://www.s-b-c.net/about/"
+      }
+    ],
+    "general": [
+      {
+        "label": "患者の権利と義務",
+        "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      },
+      {
+        "label": "厚生労働省 インフォームド・コンセント",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukyu3.html"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "contract-payment-q1",
       "categoryId": "contract-payment",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCについて",
+          "url": "https://www.s-b-c.net/about/"
+        }
+      ],
       "title": "料金案内の基本",
       "prompt": "メインサイトの料金案内として正しいものはどれですか。",
       "choices": [
@@ -25,6 +53,12 @@
       "categoryId": "contract-payment",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC お支払い方法",
+          "url": "https://www.s-b-c.net/charge_list/payment/"
+        }
+      ],
       "title": "クレジットカード名義のルール",
       "prompt": "支払い方法ページでは、本人名義でないクレジットカードでも、名義人の同伴なしで利用できると案内されている。",
       "choices": [
@@ -41,6 +75,12 @@
       "categoryId": "contract-payment",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC お支払い方法",
+          "url": "https://www.s-b-c.net/charge_list/payment/"
+        }
+      ],
       "title": "デビットカード利用時の上限",
       "prompt": "支払い方法ページのデビットカード案内として正しいものはどれですか。",
       "choices": [
@@ -59,6 +99,12 @@
       "categoryId": "contract-payment",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC お支払い方法",
+          "url": "https://www.s-b-c.net/charge_list/payment/"
+        }
+      ],
       "title": "メディカルローンの案内",
       "prompt": "支払い方法ページのメディカルローン説明として正しいものはどれですか。",
       "choices": [
@@ -77,6 +123,12 @@
       "categoryId": "contract-payment",
       "type": "multiple-choice",
       "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
       "title": "費用説明で意識したい一般原則",
       "prompt": "一般的な医療説明の考え方に照らして、費用説明で最も望ましいものはどれですか。",
       "choices": [
@@ -91,10 +143,40 @@
       "tags": ["一般知識", "費用説明", "見積もり"]
     },
     {
+      "id": "contract-payment-q6",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC お支払い方法",
+          "url": "https://www.s-b-c.net/charge_list/payment/"
+        }
+      ],
+      "title": "公開されている支払い方法",
+      "prompt": "SBCのお支払い方法ページに掲載されている支払い方法の組み合わせとして正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "現金・デビットカード・クレジットカード・メディカルローン" },
+        { "id": "b", "label": "B", "text": "現金・電子マネー・仮想通貨のみ" },
+        { "id": "c", "label": "C", "text": "クレジットカードのみ" },
+        { "id": "d", "label": "D", "text": "現金と小切手のみ" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "SBCのお支払い方法ページでは、現金、デビットカード、クレジットカード、メディカルローンが案内されています。会計時は、公開されている手段を正確に整理して案内することが大切です。",
+      "difficulty": "easy",
+      "tags": ["支払い方法", "会計", "公開情報"]
+    },
+    {
       "id": "contract-payment-s1",
       "categoryId": "contract-payment",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC お支払い方法",
+          "url": "https://www.s-b-c.net/charge_list/payment/"
+        }
+      ],
       "title": "分割払いとカード利用の相談",
       "prompt": "公開サイトの支払い案内に沿って、支払い方法を相談される場面を想定します。",
       "situation": "お客様から、分割で払いたいことと、ご家族名義のカードが使えるかを聞かれています。",

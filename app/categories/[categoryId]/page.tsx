@@ -2,15 +2,22 @@
 
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowRight, RotateCcw, Sparkles } from "lucide-react";
+import { ArrowRight, Blend, RotateCcw, Sparkles } from "lucide-react";
 
 import { KnowledgeBadge } from "@/components/knowledge-badge";
 import { ProgressMeter } from "@/components/progress-meter";
+import { SourceLinks } from "@/components/source-links";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useProgressOverview } from "@/hooks/use-progress-overview";
-import { getCategory, getCategoryContent, getQuestionTypeLabel } from "@/lib/content";
+import {
+  getCategory,
+  getCategoryContent,
+  getQuestionSources,
+  getQuestionTypeLabel,
+  getStudyQuestionsByCategory,
+} from "@/lib/content";
 import { resetCategoryProgress } from "@/lib/progress-storage";
 
 export default function CategoryDetailPage() {
@@ -35,18 +42,38 @@ export default function CategoryDetailPage() {
   }
 
   const categoryProgress = progress[category.id];
+  const studyQuestions = getStudyQuestionsByCategory(category.id);
   const answeredCount = categoryProgress?.answeredCount ?? 0;
   const progressValue = category.totalQuestions === 0 ? 0 : (answeredCount / category.totalQuestions) * 100;
   const nextHref = categoryProgress?.completed
     ? `/results/${category.id}`
     : `/quiz/${category.id}/${Math.min(answeredCount, category.totalQuestions - 1)}`;
-  const typeCounts = content.questions.reduce(
+  const typeCounts = studyQuestions.reduce(
     (acc, question) => {
       acc[question.type] = (acc[question.type] ?? 0) + 1;
       return acc;
     },
     {} as Record<string, number>,
   );
+  const knowledgeCounts = studyQuestions.reduce(
+    (acc, question) => {
+      acc[question.knowledgeType] += 1;
+      return acc;
+    },
+    {
+      "sbc-specific": 0,
+      general: 0,
+    } as Record<"sbc-specific" | "general", number>,
+  );
+  const totalWeight = category.knowledgeMix.sbcSpecific + category.knowledgeMix.general;
+  const sbcRatio = Math.round((category.knowledgeMix.sbcSpecific / totalWeight) * 100);
+  const generalRatio = Math.round((category.knowledgeMix.general / totalWeight) * 100);
+  const categorySources = [
+    ...content.referenceSources.sbcSpecific,
+    ...content.referenceSources.general.filter(
+      (source) => !content.referenceSources.sbcSpecific.some((item) => item.url === source.url),
+    ),
+  ];
 
   return (
     <div className="space-y-5">
@@ -103,6 +130,8 @@ export default function CategoryDetailPage() {
                 最初からやり直す
               </Button>
             </div>
+
+            <SourceLinks sources={categorySources} compact />
           </CardContent>
         </Card>
       </section>
@@ -118,13 +147,40 @@ export default function CategoryDetailPage() {
         ))}
       </section>
 
+      <section className="grid grid-cols-2 gap-3">
+        <Card>
+          <CardContent className="space-y-3 p-4">
+            <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+              <Blend className="size-4 text-primary" />
+              出題比率
+            </div>
+            <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+              <p>SBC独自 {sbcRatio}%</p>
+              <p>一般知識 {generalRatio}%</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="space-y-3 p-4">
+            <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+              <Sparkles className="size-4 text-primary" />
+              収録数
+            </div>
+            <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+              <p>SBC独自 {knowledgeCounts["sbc-specific"]}問</p>
+              <p>一般知識 {knowledgeCounts.general}問</p>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       <section className="space-y-3">
         <div className="flex items-center gap-2">
           <Sparkles className="size-4 text-primary" />
           <h3 className="text-lg font-semibold text-foreground">収録問題</h3>
         </div>
         <div className="space-y-3">
-          {content.questions.map((question, index) => (
+          {studyQuestions.map((question, index) => (
             <Card key={question.id}>
               <CardHeader className="space-y-3">
                 <div className="flex items-center justify-between gap-3">
@@ -145,6 +201,7 @@ export default function CategoryDetailPage() {
                     </Badge>
                   ))}
                 </div>
+                <SourceLinks sources={getQuestionSources(question)} compact />
               </CardContent>
             </Card>
           ))}

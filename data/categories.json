@@ -7,8 +7,12 @@
     "accent": "#f97316",
     "surface": "#fff7ed",
     "border": "#fdba74",
-    "totalQuestions": 5,
-    "estimatedMinutes": 8
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 4,
+      "general": 1
+    }
   },
   {
     "id": "counseling-basics",
@@ -18,8 +22,12 @@
     "accent": "#ec4899",
     "surface": "#fdf2f8",
     "border": "#f9a8d4",
-    "totalQuestions": 5,
-    "estimatedMinutes": 8
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 3,
+      "general": 2
+    }
   },
   {
     "id": "treatment-basics",
@@ -29,8 +37,12 @@
     "accent": "#d97706",
     "surface": "#fffbeb",
     "border": "#fcd34d",
-    "totalQuestions": 5,
-    "estimatedMinutes": 9
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 4,
+      "general": 1
+    }
   },
   {
     "id": "contract-payment",
@@ -40,8 +52,12 @@
     "accent": "#14b8a6",
     "surface": "#ecfeff",
     "border": "#99f6e4",
-    "totalQuestions": 5,
-    "estimatedMinutes": 8
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 4,
+      "general": 1
+    }
   },
   {
     "id": "inquiry-handling",
@@ -51,8 +67,12 @@
     "accent": "#3b82f6",
     "surface": "#eff6ff",
     "border": "#93c5fd",
-    "totalQuestions": 5,
-    "estimatedMinutes": 8
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 4,
+      "general": 1
+    }
   },
   {
     "id": "compliance-complaint",
@@ -62,7 +82,11 @@
     "accent": "#ef4444",
     "surface": "#fef2f2",
     "border": "#fca5a5",
-    "totalQuestions": 5,
-    "estimatedMinutes": 9
+    "totalQuestions": 7,
+    "estimatedMinutes": 10,
+    "knowledgeMix": {
+      "sbcSpecific": 3,
+      "general": 2
+    }
   }
 ]

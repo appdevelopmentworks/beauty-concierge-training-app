@@ -5,17 +5,19 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, MessageSquareQuote, XCircle } from "lucide-react";
 
 import { KnowledgeBadge } from "@/components/knowledge-badge";
+import { SourceLinks } from "@/components/source-links";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { ScenarioQuestion } from "@/types/content";
+import type { ScenarioQuestion, SourceLink } from "@/types/content";
 
 interface ScenarioCardProps {
   question: ScenarioQuestion;
   currentIndex: number;
   totalQuestions: number;
   nextHref: string;
+  sources: SourceLink[];
   onCompleted: (isCorrect: boolean) => void;
 }
 
@@ -24,6 +26,7 @@ export function ScenarioCard({
   currentIndex,
   totalQuestions,
   nextHref,
+  sources,
   onCompleted,
 }: ScenarioCardProps) {
   const [currentStepId, setCurrentStepId] = useState(question.steps[0]?.id ?? "");
@@ -160,6 +163,7 @@ export function ScenarioCard({
               </p>
             ) : null}
             <p className="text-sm leading-6 text-muted-foreground">{question.explanation}</p>
+            <SourceLinks sources={sources} compact />
             <Button asChild className="w-full">
               <Link href={nextHref}>
                 次へ進む

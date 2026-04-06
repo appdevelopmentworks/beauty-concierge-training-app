@@ -5,21 +5,23 @@ import { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, CircleHelp, XCircle } from "lucide-react";
 
 import { KnowledgeBadge } from "@/components/knowledge-badge";
+import { SourceLinks } from "@/components/source-links";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { QuizQuestion } from "@/types/content";
+import type { QuizQuestion, SourceLink } from "@/types/content";
 
 interface QuizCardProps {
   question: QuizQuestion;
   currentIndex: number;
   totalQuestions: number;
   nextHref: string;
+  sources: SourceLink[];
   onAnswered: (isCorrect: boolean) => void;
 }
 
-export function QuizCard({ question, currentIndex, totalQuestions, nextHref, onAnswered }: QuizCardProps) {
+export function QuizCard({ question, currentIndex, totalQuestions, nextHref, sources, onAnswered }: QuizCardProps) {
   const [selectedChoiceId, setSelectedChoiceId] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
@@ -122,6 +124,7 @@ export function QuizCard({ question, currentIndex, totalQuestions, nextHref, onA
                 <p className="text-sm leading-6 text-muted-foreground">{question.explanation}</p>
               </div>
             </div>
+            <SourceLinks sources={sources} compact />
             <Button asChild className="w-full">
               <Link href={nextHref}>
                 次へ進む

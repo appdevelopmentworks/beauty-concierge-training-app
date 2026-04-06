@@ -1,12 +1,36 @@
 {
   "categoryId": "treatment-basics",
   "overview": "メインサイトとメンズサイトの公開情報をもとに、コンシェルジュが押さえたい施術カテゴリ案内を確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBCメンズ公式トップ",
+        "url": "https://www.sbc-mens.net/"
+      },
+      {
+        "label": "SBC 施術カテゴリ一覧",
+        "url": "https://www.s-b-c.net/"
+      }
+    ],
+    "general": [
+      {
+        "label": "厚生労働省 医療広告規制の事例解説書",
+        "url": "https://www.mhlw.go.jp/content/10800000/001153837.pdf"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "treatment-basics-q1",
       "categoryId": "treatment-basics",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式トップ",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "メンズサイトの代表的な悩みと施術例",
       "prompt": "メンズサイトの掲載内容に合う組み合わせはどれですか。",
       "choices": [
@@ -25,6 +49,12 @@
       "categoryId": "treatment-basics",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式トップ",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "男性美容の範囲",
       "prompt": "メンズサイトの案内では、男性向け美容医療は手術中心で、ニキビやしわなどの美容皮膚科相談はほとんど想定されていない。",
       "choices": [
@@ -41,6 +71,12 @@
       "categoryId": "treatment-basics",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ Teen二重",
+          "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+        }
+      ],
       "title": "男性向け目元施術の案内",
       "prompt": "メンズサイトの目元施術案内として正しいものはどれですか。",
       "choices": [
@@ -59,6 +95,12 @@
       "categoryId": "treatment-basics",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC公式トップ",
+          "url": "https://www.s-b-c.net/"
+        }
+      ],
       "title": "メインサイトの施術カテゴリ理解",
       "prompt": "メインサイトの掲載カテゴリに照らして、医療レーザー脱毛はどの案内群に含まれていますか。",
       "choices": [
@@ -73,10 +115,62 @@
       "tags": ["カテゴリ理解", "脱毛", "メインサイト"]
     },
     {
+      "id": "treatment-basics-q5",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式トップ",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
+      "title": "SBCメンズの相談しやすさ",
+      "prompt": "SBCメンズ公式トップの「選ばれる理由」に含まれるものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "男性専門院あり・24時間WEB予約可・カウンセリング無料" },
+        { "id": "b", "label": "B", "text": "全施術が深夜帯のみ対応・完全会員制" },
+        { "id": "c", "label": "C", "text": "電話予約不可・メールのみ受付" },
+        { "id": "d", "label": "D", "text": "男性の肌悩み相談は対象外" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "SBCメンズ公式トップでは、男性専門院あり、24時間WEB予約可、カウンセリング無料など、相談のしやすさにつながる理由が公開されています。",
+      "difficulty": "easy",
+      "tags": ["メンズ", "無料カウンセリング", "相談導線"]
+    },
+    {
+      "id": "treatment-basics-q6",
+      "categoryId": "treatment-basics",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "厚生労働省 医療広告規制の事例解説書",
+          "url": "https://www.mhlw.go.jp/content/10800000/001153837.pdf"
+        }
+      ],
+      "title": "施術効果の伝え方",
+      "prompt": "一般的な医療広告の考え方では、体験談やビフォーアフターだけを根拠に、誰でも同じ結果になるように案内してよい。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "案内してよい" },
+        { "id": "false", "label": "×", "text": "誤認を招くため避ける" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "厚生労働省の医療広告規制の事例解説では、体験談やビフォーアフターは誤認を招くおそれがあるため、効果の断定的な案内は避けるべきとされています。コンシェルジュも個人差への配慮が必要です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "医療広告", "個人差"]
+    },
+    {
       "id": "treatment-basics-s1",
       "categoryId": "treatment-basics",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ公式トップ",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "男性のお客様から施術範囲を聞かれた場面",
       "prompt": "メンズサイトの公開情報に沿って、相談できる施術領域を案内します。",
       "situation": "男性のお客様から「ここは手術中心ですか？肌悩みも相談できますか？」と質問されています。",

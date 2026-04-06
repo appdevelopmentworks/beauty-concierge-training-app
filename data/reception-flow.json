@@ -1,12 +1,36 @@
 {
   "categoryId": "reception-flow",
   "overview": "公式サイトの公開情報をもとに、予約導線・来院時の受付・初診案内の流れを確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBC 施術までの流れ",
+        "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+      },
+      {
+        "label": "SBC公式トップ",
+        "url": "https://www.s-b-c.net/"
+      }
+    ],
+    "general": [
+      {
+        "label": "個人情報保護委員会 FAQ",
+        "url": "https://www.ppc.go.jp/all_faq_index/faq3-q1-2/"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "reception-flow-q1",
       "categoryId": "reception-flow",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "予約方法の案内",
       "prompt": "「施術までの流れ」ページの案内として正しい予約方法はどれですか。",
       "choices": [
@@ -25,6 +49,12 @@
       "categoryId": "reception-flow",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "施術が未定のお客様",
       "prompt": "受ける施術がまだ決まっていないお客様は、カウンセリング予約を取ることができない。",
       "choices": [
@@ -41,6 +71,12 @@
       "categoryId": "reception-flow",
       "type": "order",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "来院後の基本順序",
       "prompt": "公式サイトの流れに沿った来院後の順序として、最も自然なのはどれですか。",
       "choices": [
@@ -59,6 +95,16 @@
       "categoryId": "reception-flow",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 安全対策ページ",
+          "url": "https://www.s-b-c.net/about/safety/"
+        },
+        {
+          "label": "SBCメンズ公式トップ",
+          "url": "https://www.sbc-mens.net/"
+        }
+      ],
       "title": "予約受付時間の理解",
       "prompt": "公開サイトの予約案内として正しいものはどれですか。",
       "choices": [
@@ -77,6 +123,12 @@
       "categoryId": "reception-flow",
       "type": "true-false",
       "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "個人情報保護委員会 FAQ",
+          "url": "https://www.ppc.go.jp/all_faq_index/faq3-q1-2/"
+        }
+      ],
       "title": "受付での問診票記入と個人情報",
       "prompt": "医療機関の受付でお客様自身が問診票へ身体状況や病状を記入して受診を申し出ることは、必要な個人情報取得を前提とした行為と考えられる。",
       "choices": [
@@ -89,10 +141,44 @@
       "tags": ["一般知識", "受付", "個人情報"]
     },
     {
+      "id": "reception-flow-q6",
+      "categoryId": "reception-flow",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC FAGA 施術までの流れ",
+          "url": "https://www.s-b-c.net/faga/medicine/"
+        },
+        {
+          "label": "SBC大分院特集（初診・再診料無料）",
+          "url": "https://www.s-b-c.net/clinic/branch/oita/special/shimitori-oita/"
+        }
+      ],
+      "title": "初診時の費用案内",
+      "prompt": "SBCの公開案内に照らして、初診時の説明として最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "初診料と再診料はかかるが、問診票は無料である" },
+        { "id": "b", "label": "B", "text": "ドクターカウンセリングは無料で、初診料や再診料も0円の案内がある" },
+        { "id": "c", "label": "C", "text": "来院前の相談は有料で、当日契約時のみ無料になる" },
+        { "id": "d", "label": "D", "text": "初診時の費用案内は公開されていない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "SBCの公開ページでは、無料カウンセリングや初診料・再診料0円の案内が複数の導線で示されています。受付では、相談段階でも来院しやすい導線として説明できます。",
+      "difficulty": "easy",
+      "tags": ["初診料", "無料カウンセリング", "受付"]
+    },
+    {
       "id": "reception-flow-s1",
       "categoryId": "reception-flow",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "施術が未定のお客様からの予約相談",
       "prompt": "公開サイトの案内に沿って、相談段階のお客様へ予約導線を案内します。",
       "situation": "お客様から「悩みはあるけれど、どの施術が合うかまだ分からない」と相談を受けています。",

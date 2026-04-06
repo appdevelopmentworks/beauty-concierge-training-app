@@ -2,6 +2,16 @@ export type Difficulty = "easy" | "medium" | "hard";
 export type QuestionType = "multiple-choice" | "true-false" | "order" | "scenario";
 export type KnowledgeType = "sbc-specific" | "general";
 
+export interface SourceLink {
+  label: string;
+  url: string;
+}
+
+export interface KnowledgeMix {
+  sbcSpecific: number;
+  general: number;
+}
+
 export interface Choice {
   id: string;
   label: string;
@@ -18,6 +28,7 @@ export interface Category {
   border: string;
   totalQuestions: number;
   estimatedMinutes: number;
+  knowledgeMix: KnowledgeMix;
 }
 
 export interface BaseQuestion {
@@ -25,6 +36,7 @@ export interface BaseQuestion {
   categoryId: string;
   type: QuestionType;
   knowledgeType: KnowledgeType;
+  sources?: SourceLink[];
   title: string;
   prompt: string;
   explanation: string;
@@ -65,5 +77,9 @@ export type Question = QuizQuestion | ScenarioQuestion;
 export interface CategoryContent {
   categoryId: string;
   overview: string;
+  referenceSources: {
+    sbcSpecific: SourceLink[];
+    general: SourceLink[];
+  };
   questions: Question[];
 }

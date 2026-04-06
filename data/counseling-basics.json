@@ -1,12 +1,40 @@
 {
   "categoryId": "counseling-basics",
   "overview": "採用サイトと公開案内をもとに、コンシェルジュの役割・提案姿勢・カウンセリング方針を確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBC 5つの約束",
+        "url": "https://www.s-b-c.net/about/"
+      },
+      {
+        "label": "SBC採用 コンシェルジュ募集要項",
+        "url": "https://www.sbc-recruit.com/global/description/p2705/"
+      }
+    ],
+    "general": [
+      {
+        "label": "厚生労働省 インフォームド・コンセント",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukyu3.html"
+      },
+      {
+        "label": "患者の権利と義務",
+        "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "counseling-basics-q1",
       "categoryId": "counseling-basics",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 募集要項",
+          "url": "https://www.sbc-recruit.com/global/description/p2705/"
+        }
+      ],
       "title": "コンシェルジュの主な役割",
       "prompt": "採用サイトの「仕事紹介」に照らして、コンシェルジュの仕事として最も近いものはどれですか。",
       "choices": [
@@ -25,6 +53,12 @@
       "categoryId": "counseling-basics",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 FAQ",
+          "url": "https://www.sbc-recruit.com/counselor/faq/"
+        }
+      ],
       "title": "入社前の資格要件",
       "prompt": "採用FAQでは、コンシェルジュとして入社する前に特別な資格が必須と案内されている。",
       "choices": [
@@ -41,6 +75,12 @@
       "categoryId": "counseling-basics",
       "type": "order",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 募集要項",
+          "url": "https://www.sbc-recruit.com/global/description/p2705/"
+        }
+      ],
       "title": "公開情報に沿った提案の流れ",
       "prompt": "採用サイトにある仕事内容の並びとして、最も自然なのはどれですか。",
       "choices": [
@@ -59,6 +99,12 @@
       "categoryId": "counseling-basics",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 5つの約束",
+          "url": "https://www.s-b-c.net/about/"
+        }
+      ],
       "title": "SBCの公開方針",
       "prompt": "公式サイトの「SBCの5つの約束」に沿った案内として正しいものはどれですか。",
       "choices": [
@@ -77,6 +123,12 @@
       "categoryId": "counseling-basics",
       "type": "multiple-choice",
       "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "厚生労働省 インフォームド・コンセント",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukyu3.html"
+        }
+      ],
       "title": "説明と同意の基本姿勢",
       "prompt": "一般的な医療機関の説明と同意の考え方として、最も適切なのはどれですか。",
       "choices": [
@@ -91,10 +143,42 @@
       "tags": ["一般知識", "インフォームドコンセント", "説明"]
     },
     {
+      "id": "counseling-basics-q6",
+      "categoryId": "counseling-basics",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "患者様の選択権",
+      "prompt": "一般的な医療の考え方では、患者様は十分な説明を受けたうえで、検査や治療を選択したり拒否したりする権利を持つ。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "医療者が一方的に決める" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "厚生労働省の患者の権利に関する説明では、患者様は情報提供を受け、自分の意思で検査や治療を選択または拒否する権利を持つとされています。カウンセリングでは、その判断を支える説明が大切です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "患者の権利", "選択"]
+    },
+    {
       "id": "counseling-basics-s1",
       "categoryId": "counseling-basics",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 5つの約束",
+          "url": "https://www.s-b-c.net/about/"
+        },
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
       "title": "勧誘が不安なお客様への案内",
       "prompt": "公式サイトの公開方針に沿って、カウンセリング不安を和らげる案内を行います。",
       "situation": "初めて相談に来るお客様から、「高い施術を強く勧められないか心配」と言われました。",

@@ -1,12 +1,40 @@
 {
   "categoryId": "compliance-complaint",
   "overview": "公開されているSBCの方針・メンズFAQ・採用FAQをもとに、個人情報配慮とコンシェルジュの行動基準を確認します。",
+  "referenceSources": {
+    "sbcSpecific": [
+      {
+        "label": "SBCメンズ公式トップ",
+        "url": "https://www.sbc-mens.net/"
+      },
+      {
+        "label": "SBC採用 FAQ",
+        "url": "https://www.sbc-recruit.com/counselor/faq/"
+      }
+    ],
+    "general": [
+      {
+        "label": "個人情報保護委員会 FAQ",
+        "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+      },
+      {
+        "label": "患者の権利と義務",
+        "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      }
+    ]
+  },
   "questions": [
     {
       "id": "compliance-complaint-q1",
       "categoryId": "compliance-complaint",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ 二重整形のよくある質問",
+          "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+        }
+      ],
       "title": "18歳以上のお客様の同意書案内",
       "prompt": "メンズサイトFAQの案内として正しいものはどれですか。",
       "choices": [
@@ -25,6 +53,12 @@
       "categoryId": "compliance-complaint",
       "type": "true-false",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ 二重整形のよくある質問",
+          "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+        }
+      ],
       "title": "18歳以上のお客様情報の開示",
       "prompt": "メンズサイトFAQでは、18歳以上のお客様であれば、親御様から依頼があったときに治療内容を開示できると案内されている。",
       "choices": [
@@ -41,6 +75,12 @@
       "categoryId": "compliance-complaint",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 FAQ",
+          "url": "https://www.sbc-recruit.com/counselor/faq/"
+        }
+      ],
       "title": "ノルマに関する採用FAQ",
       "prompt": "採用FAQの案内として正しいものはどれですか。",
       "choices": [
@@ -59,6 +99,12 @@
       "categoryId": "compliance-complaint",
       "type": "multiple-choice",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 FAQ",
+          "url": "https://www.sbc-recruit.com/counselor/faq/"
+        }
+      ],
       "title": "採用サイトで求める人物像",
       "prompt": "採用FAQにある「活躍している方の特徴」として近いものはどれですか。",
       "choices": [
@@ -77,6 +123,12 @@
       "categoryId": "compliance-complaint",
       "type": "true-false",
       "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "個人情報保護委員会 FAQ",
+          "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+        }
+      ],
       "title": "第三者提供の原則",
       "prompt": "一般的な医療機関の個人情報取扱いでは、患者様の個人データを第三者へ提供する場合、原則として本人の同意を得ることが必要である。",
       "choices": [
@@ -89,10 +141,44 @@
       "tags": ["一般知識", "個人情報", "第三者提供"]
     },
     {
+      "id": "compliance-complaint-q6",
+      "categoryId": "compliance-complaint",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "患者様のプライバシーと尊厳",
+      "prompt": "一般的な医療機関で尊重される患者様の権利として、最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "診療上知り得た情報は、院外で話しても差し支えない" },
+        { "id": "b", "label": "B", "text": "個人情報やプライバシーが守られ、人格や価値観が尊重される" },
+        { "id": "c", "label": "C", "text": "説明内容は医療者だけが理解していれば十分である" },
+        { "id": "d", "label": "D", "text": "患者様の意向より院内都合が常に優先される" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "厚生労働省の患者の権利に関する考え方では、患者様の個人情報やプライバシーが守られ、人格や価値観が尊重されることが基本とされています。コンシェルジュもその実務の入口に立つ役割です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "プライバシー", "尊厳"]
+    },
+    {
       "id": "compliance-complaint-s1",
       "categoryId": "compliance-complaint",
       "type": "scenario",
       "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ 二重整形のよくある質問",
+          "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+        },
+        {
+          "label": "個人情報保護委員会 FAQ",
+          "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+        }
+      ],
       "title": "18歳のお客様に関する親御様からの問い合わせ",
       "prompt": "メンズサイトFAQの公開情報に沿って、同意書と情報開示の案内を行います。",
       "situation": "親御様から、18歳のお子様の来院について質問を受けています。",
