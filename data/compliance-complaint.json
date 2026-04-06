@@ -1,0 +1,163 @@
+{
+  "categoryId": "compliance-complaint",
+  "overview": "公開されているSBCの方針・メンズFAQ・採用FAQをもとに、個人情報配慮とコンシェルジュの行動基準を確認します。",
+  "questions": [
+    {
+      "id": "compliance-complaint-q1",
+      "categoryId": "compliance-complaint",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "18歳以上のお客様の同意書案内",
+      "prompt": "メンズサイトFAQの案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "18歳以上でも親権者同意書と署名が必須である" },
+        { "id": "b", "label": "B", "text": "18歳以上であれば、親権者同意書や親権者の署名は不要と案内されている" },
+        { "id": "c", "label": "C", "text": "18歳以上でも来院時は必ず親の同伴が必要である" },
+        { "id": "d", "label": "D", "text": "年齢にかかわらず同意書の扱いは公開されていない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "メンズサイトFAQでは、18歳以上であれば親権者同意書・親権者の署名は不要と案内されています。",
+      "difficulty": "easy",
+      "tags": ["同意書", "年齢", "FAQ"]
+    },
+    {
+      "id": "compliance-complaint-q2",
+      "categoryId": "compliance-complaint",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "18歳以上のお客様情報の開示",
+      "prompt": "メンズサイトFAQでは、18歳以上のお客様であれば、親御様から依頼があったときに治療内容を開示できると案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "開示できる" },
+        { "id": "false", "label": "×", "text": "親御様でも開示できない" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "メンズサイトFAQでは、18歳以上の方の情報は個人情報保護法の観点から親御様にも開示できないと案内されています。",
+      "difficulty": "easy",
+      "tags": ["個人情報", "開示", "FAQ"]
+    },
+    {
+      "id": "compliance-complaint-q3",
+      "categoryId": "compliance-complaint",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "ノルマに関する採用FAQ",
+      "prompt": "採用FAQの案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "個人ノルマがあり、各自が個人売上だけを追う仕組みである" },
+        { "id": "b", "label": "B", "text": "個人ノルマはなく、クリニック単位の売上目標に向けてチームで取り組む" },
+        { "id": "c", "label": "C", "text": "売上目標の概念はなく、数値管理は一切行わない" },
+        { "id": "d", "label": "D", "text": "個人ノルマは研修終了後のみ発生すると案内されている" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "採用FAQでは、個人ノルマはなく、クリニック単位の売上目標に向けてチームで協力すると説明されています。",
+      "difficulty": "medium",
+      "tags": ["採用FAQ", "チーム", "行動基準"]
+    },
+    {
+      "id": "compliance-complaint-q4",
+      "categoryId": "compliance-complaint",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "採用サイトで求める人物像",
+      "prompt": "採用FAQにある「活躍している方の特徴」として近いものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "行動基準を理解し、お客様起点で考え、前向きに協力できる人" },
+        { "id": "b", "label": "B", "text": "一人で完結したいので、チーム連携は避けたい人" },
+        { "id": "c", "label": "C", "text": "お客様よりも自分のやり方を優先したい人" },
+        { "id": "d", "label": "D", "text": "失敗したらすぐ諦める人" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "採用FAQでは、行動基準の理解、お客様の幸せを考える姿勢、素直さや前向きさ、チームでの成長が重視されています。",
+      "difficulty": "medium",
+      "tags": ["採用FAQ", "人物像", "文化"]
+    },
+    {
+      "id": "compliance-complaint-q5",
+      "categoryId": "compliance-complaint",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "title": "第三者提供の原則",
+      "prompt": "一般的な医療機関の個人情報取扱いでは、患者様の個人データを第三者へ提供する場合、原則として本人の同意を得ることが必要である。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "原則として必要である" },
+        { "id": "false", "label": "×", "text": "同意は原則不要である" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "個人情報保護委員会の医療・介護関係事業者向けQ&Aでは、第三者提供にあたっては原則として本人同意を得ることが必要とされています。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "個人情報", "第三者提供"]
+    },
+    {
+      "id": "compliance-complaint-s1",
+      "categoryId": "compliance-complaint",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "18歳のお客様に関する親御様からの問い合わせ",
+      "prompt": "メンズサイトFAQの公開情報に沿って、同意書と情報開示の案内を行います。",
+      "situation": "親御様から、18歳のお子様の来院について質問を受けています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "親御様",
+          "message": "うちの子は18歳なのですが、親の同意書や署名は必要ですか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "18歳以上でも親権者同意書と署名が必要と伝える",
+              "feedback": "メンズサイトFAQでは、18歳以上は親権者同意書・署名が不要と案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "18歳以上であれば、親権者同意書や親権者の署名は不要と案内する",
+              "nextStepId": "step-2",
+              "feedback": "公開FAQに沿った説明です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "年齢に関係なく、必ず親御様の来院が必要と伝える",
+              "feedback": "公開FAQの内容と一致しません。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "親御様",
+          "message": "では、来院後の治療内容は私に教えてもらえますか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "18歳以上なら、親御様へ自由に内容共有できると伝える",
+              "feedback": "公開FAQでは、18歳以上の方の情報は親御様にも開示できないとされています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "18歳以上の方の情報は、個人情報保護法の観点から親御様にも開示できないと案内する",
+              "feedback": "公開FAQに沿った案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "費用だけなら必ず開示できると伝える",
+              "feedback": "公開FAQでは、18歳以上の方の情報自体が親御様に開示できないとされています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "同意書と個人情報の扱いを、公開FAQどおりに区別して案内できています。",
+      "feedbackIncorrect": "18歳以上のお客様については、同意書不要の案内と、親御様への情報非開示の案内を切り分けて説明する必要があります。",
+      "explanation": "コンシェルジュは、同意書の要否と情報開示の可否を混同せず、公開されている個人情報ルールに沿って案内することが重要です。",
+      "difficulty": "hard",
+      "tags": ["個人情報", "同意書", "FAQ"]
+    }
+  ]
+}

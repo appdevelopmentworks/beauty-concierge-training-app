@@ -1,0 +1,165 @@
+{
+  "categoryId": "counseling-basics",
+  "overview": "採用サイトと公開案内をもとに、コンシェルジュの役割・提案姿勢・カウンセリング方針を確認します。",
+  "questions": [
+    {
+      "id": "counseling-basics-q1",
+      "categoryId": "counseling-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "コンシェルジュの主な役割",
+      "prompt": "採用サイトの「仕事紹介」に照らして、コンシェルジュの仕事として最も近いものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "医師の診断だけを代行し、施術の適応を最終決定する" },
+        { "id": "b", "label": "B", "text": "お悩みをヒアリングし、施術やメニューの提案、契約・会計まで担う" },
+        { "id": "c", "label": "C", "text": "受付対応は行わず、電話だけを専門に担当する" },
+        { "id": "d", "label": "D", "text": "SNS運用だけを行い、お客様対応はしない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "採用サイトでは、コンシェルジュの業務として悩みのヒアリング、施術やメニューの提案、契約・会計業務などが案内されています。",
+      "difficulty": "easy",
+      "tags": ["仕事内容", "カウンセリング", "提案"]
+    },
+    {
+      "id": "counseling-basics-q2",
+      "categoryId": "counseling-basics",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "入社前の資格要件",
+      "prompt": "採用FAQでは、コンシェルジュとして入社する前に特別な資格が必須と案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "必須である" },
+        { "id": "false", "label": "×", "text": "特別な資格は不要と案内されている" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "採用FAQでは、入社前に必要な資格は特になく、必要な知識や技術は研修や業務を通して学べると案内されています。",
+      "difficulty": "easy",
+      "tags": ["採用FAQ", "研修", "入社準備"]
+    },
+    {
+      "id": "counseling-basics-q3",
+      "categoryId": "counseling-basics",
+      "type": "order",
+      "knowledgeType": "sbc-specific",
+      "title": "公開情報に沿った提案の流れ",
+      "prompt": "採用サイトにある仕事内容の並びとして、最も自然なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "お悩みのヒアリング → 施術やメニューの説明・提案 → 契約 → 会計" },
+        { "id": "b", "label": "B", "text": "会計 → 契約 → 施術の提案 → お悩みのヒアリング" },
+        { "id": "c", "label": "C", "text": "契約 → お悩みのヒアリング → 会計 → 医師の診断" },
+        { "id": "d", "label": "D", "text": "施術の提案 → 会計 → お悩みのヒアリング → 契約" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "仕事内容の公開情報では、まず悩みを聞き、その内容に応じてメニューを提案し、契約や会計へ進む流れが示されています。",
+      "difficulty": "medium",
+      "tags": ["カウンセリング", "提案", "契約"]
+    },
+    {
+      "id": "counseling-basics-q4",
+      "categoryId": "counseling-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "SBCの公開方針",
+      "prompt": "公式サイトの「SBCの5つの約束」に沿った案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "お客様が希望すれば、適応がなくても必ず施術を勧める" },
+        { "id": "b", "label": "B", "text": "家族や友人、スタッフに勧められない治療でも、売上のためなら提案する" },
+        { "id": "c", "label": "C", "text": "美容医療のプロとして適応でない治療は、お客様が望んでも勧めない" },
+        { "id": "d", "label": "D", "text": "強い勧誘で即日契約を目指すことが基本方針である" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "公式サイトでは、無理な勧誘はしないこと、また適応でない治療はお客様が望んでも行わないことが明記されています。",
+      "difficulty": "medium",
+      "tags": ["方針", "提案姿勢", "適応"]
+    },
+    {
+      "id": "counseling-basics-q5",
+      "categoryId": "counseling-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "title": "説明と同意の基本姿勢",
+      "prompt": "一般的な医療機関の説明と同意の考え方として、最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "患者様が迷っていても、その場で即決してもらうことを優先する" },
+        { "id": "b", "label": "B", "text": "患者様は納得するまで質問でき、強制されず自分の意思で決められるようにする" },
+        { "id": "c", "label": "C", "text": "説明は最低限にとどめ、詳しい確認は不要である" },
+        { "id": "d", "label": "D", "text": "一度案内したら、別の選択肢について触れなくてよい" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "厚生労働省の公開説明では、説明と同意では患者様が納得するまで質問でき、強制されず自由意思で決めることが重要とされています。コンシェルジュもその理解を支える姿勢が求められます。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "インフォームドコンセント", "説明"]
+    },
+    {
+      "id": "counseling-basics-s1",
+      "categoryId": "counseling-basics",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "勧誘が不安なお客様への案内",
+      "prompt": "公式サイトの公開方針に沿って、カウンセリング不安を和らげる案内を行います。",
+      "situation": "初めて相談に来るお客様から、「高い施術を強く勧められないか心配」と言われました。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "相談に行ったら、強く勧誘されるのではないかと心配です。",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "まず契約していただいてから詳しく説明しますと伝える",
+              "feedback": "公式サイトの方針である「無理な勧誘はしない」に反します。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "公開サイトでも無理な勧誘はしない方針が示されており、まず悩みや希望をうかがうと伝える",
+              "nextStepId": "step-2",
+              "feedback": "公開方針に沿った安心感のある案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "勧誘が不安なら、相談自体をやめた方がよいと伝える",
+              "feedback": "公開案内では相談段階から来院できる導線が用意されています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "もし話を聞いて、自分に合わないと思ったらどうなりますか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "予約した以上、その日に施術まで進む必要があると伝える",
+              "feedback": "公開サイトでは、当日に施術するか判断してよいと案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "カウンセリングで内容を確認したうえで、施術するかどうかは当日に判断して大丈夫と伝える",
+              "feedback": "公開サイトの来院導線と整合する案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "相談後に断ることはできないと伝える",
+              "feedback": "公開案内の内容と一致しません。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "無理な勧誘をしない方針と、当日判断でよい来院導線を適切に案内できています。",
+      "feedbackIncorrect": "SBCの公開方針では、無理な勧誘を行わず、相談した上で施術するか判断できる導線が示されています。",
+      "explanation": "コンシェルジュのカウンセリングでは、悩みや希望を丁寧に聞きながら、お客様が納得して判断できるように案内する姿勢が重要です。",
+      "difficulty": "medium",
+      "tags": ["勧誘方針", "カウンセリング", "提案姿勢"]
+    }
+  ]
+}

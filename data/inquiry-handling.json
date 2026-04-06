@@ -1,0 +1,147 @@
+{
+  "categoryId": "inquiry-handling",
+  "overview": "公開サイトの予約・問い合わせ導線と採用サイトの業務紹介をもとに、問い合わせ対応の基礎を確認します。",
+  "questions": [
+    {
+      "id": "inquiry-handling-q1",
+      "categoryId": "inquiry-handling",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "電話受付時間の理解",
+      "prompt": "公開サイトの案内として正しい電話受付の説明はどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "電話受付は24時間である" },
+        { "id": "b", "label": "B", "text": "電話受付は10:00〜23:00と案内されている" },
+        { "id": "c", "label": "C", "text": "電話受付は平日午前のみである" },
+        { "id": "d", "label": "D", "text": "電話受付は来院予約には使えない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "メインサイト・メンズサイトの案内では、電話受付時間は10:00〜23:00です。",
+      "difficulty": "easy",
+      "tags": ["電話対応", "受付時間", "予約"]
+    },
+    {
+      "id": "inquiry-handling-q2",
+      "categoryId": "inquiry-handling",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "WEB予約の前提",
+      "prompt": "公開サイトでは、WEB予約は24時間利用でき、MySBC登録が必要と案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "その案内ではない" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "メインサイト・メンズサイトともに、WEB予約は24時間対応で、MySBC登録が必要と案内されています。",
+      "difficulty": "easy",
+      "tags": ["WEB予約", "MySBC", "問い合わせ"]
+    },
+    {
+      "id": "inquiry-handling-q3",
+      "categoryId": "inquiry-handling",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "問い合わせに紐づく事務作業",
+      "prompt": "採用サイトの仕事内容に照らして、コンシェルジュの事務作業に含まれるものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "カルテ登録、メール返信、電話対応など" },
+        { "id": "b", "label": "B", "text": "医師免許が必要な診断行為のみ" },
+        { "id": "c", "label": "C", "text": "採血や手術の執刀のみ" },
+        { "id": "d", "label": "D", "text": "問い合わせとは無関係で、事務作業は一切ない" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "採用サイトでは、電話対応・カルテ作成・メール返信など、問い合わせに紐づく事務作業も公開されています。",
+      "difficulty": "medium",
+      "tags": ["事務作業", "電話対応", "メール"]
+    },
+    {
+      "id": "inquiry-handling-q4",
+      "categoryId": "inquiry-handling",
+      "type": "order",
+      "knowledgeType": "sbc-specific",
+      "title": "予約前相談の流れ",
+      "prompt": "公開サイトの予約案内に近い流れとして、最も自然なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "希望日時と相談内容を伝える → 予約を取る → 当日来院して受付・問診票へ進む" },
+        { "id": "b", "label": "B", "text": "まず施術を確定する → 会計する → 後日予約を取る" },
+        { "id": "c", "label": "C", "text": "当日来院する → 予約を取る → 問診票を書く" },
+        { "id": "d", "label": "D", "text": "予約せず施術だけ受ける → 受付で内容を決める" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "公開サイトでは、希望日時と相談内容を伝えて予約を取り、当日は受付と問診票記入へ進む流れが案内されています。",
+      "difficulty": "medium",
+      "tags": ["予約導線", "来院前", "受付"]
+    },
+    {
+      "id": "inquiry-handling-s1",
+      "categoryId": "inquiry-handling",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "夜間のキャンセル・再予約相談",
+      "prompt": "公開サイトにあるMySBCと電話受付案内をもとに、営業時間外の問い合わせを想定します。",
+      "situation": "お客様が夜遅い時間に、電話ではなくオンラインでキャンセルや再予約ができるかを気にしています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "今は電話できない時間なのですが、予約キャンセルはどうしたらいいですか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "キャンセルは翌日来院して手続きするしかないと伝える",
+              "feedback": "メインサイトにはMySBCの予約キャンセル導線が公開されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "MySBCの予約キャンセル導線が公開されていることを案内する",
+              "nextStepId": "step-2",
+              "feedback": "営業時間外の導線として適切です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "キャンセルは電話のみで、他の方法はないと伝える",
+              "feedback": "公開サイト上にはオンライン導線もあります。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "再予約もWEBでできますか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "WEB予約は日中しか使えず、会員登録も不要と伝える",
+              "feedback": "公開サイトでは、WEB予約は24時間対応でMySBC登録が必要と案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "WEB予約は24時間対応で、MySBC登録が必要と案内する",
+              "feedback": "公開情報に沿った案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "電話受付の10:00〜23:00以外は、予約方法が存在しないと伝える",
+              "feedback": "WEB予約導線が公開されています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "電話受付時間とMySBC経由のオンライン導線を、公開情報どおりに案内できています。",
+      "feedbackIncorrect": "公開サイトでは、電話受付時間に加えて、MySBCを前提とした24時間WEB予約やオンラインキャンセル導線が示されています。",
+      "explanation": "問い合わせ対応では、電話・WEB・MySBCのどの導線を案内すべきかを整理して伝えることが、コンシェルジュの基本です。",
+      "difficulty": "medium",
+      "tags": ["MySBC", "予約変更", "問い合わせ"]
+    }
+  ]
+}

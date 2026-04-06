@@ -1,0 +1,165 @@
+{
+  "categoryId": "contract-payment",
+  "overview": "料金ページ・支払い方法ページ・FAQの公開情報をもとに、コンシェルジュが案内する会計基礎を確認します。",
+  "questions": [
+    {
+      "id": "contract-payment-q1",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "料金案内の基本",
+      "prompt": "メインサイトの料金案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "薬代や消費税は別で、来院後に追加される可能性が高い" },
+        { "id": "b", "label": "B", "text": "アフターケア代・薬代・消費税まで込みの、分かりやすい料金体系を掲げている" },
+        { "id": "c", "label": "C", "text": "見積もりは出さず、当日の医師判断のみで金額が決まる" },
+        { "id": "d", "label": "D", "text": "分割払いは案内していない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "メインサイトでは、アフターケア代・薬代・消費税まで込みの分かりやすい料金体系と案内されています。",
+      "difficulty": "easy",
+      "tags": ["料金", "見積もり", "会計"]
+    },
+    {
+      "id": "contract-payment-q2",
+      "categoryId": "contract-payment",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "クレジットカード名義のルール",
+      "prompt": "支払い方法ページでは、本人名義でないクレジットカードでも、名義人の同伴なしで利用できると案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "同伴なしで利用できる" },
+        { "id": "false", "label": "×", "text": "本人名義が基本で、家族名義は名義人同伴が必要" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "支払い方法ページでは、クレジットカードは原則ご本人名義、家族名義カードは名義人同伴で利用可能と案内されています。",
+      "difficulty": "easy",
+      "tags": ["クレジットカード", "本人確認", "支払い方法"]
+    },
+    {
+      "id": "contract-payment-q3",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "デビットカード利用時の上限",
+      "prompt": "支払い方法ページのデビットカード案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "1日の上限金額は5万円である" },
+        { "id": "b", "label": "B", "text": "1日の上限金額は50万円までと案内されている" },
+        { "id": "c", "label": "C", "text": "利用上限はなく、何円でも決済できる" },
+        { "id": "d", "label": "D", "text": "デビットカードは使えない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "支払い方法ページでは、デビットカードの1日の上限金額は50万円までと案内されています。",
+      "difficulty": "medium",
+      "tags": ["デビットカード", "支払い方法", "上限"]
+    },
+    {
+      "id": "contract-payment-q4",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "メディカルローンの案内",
+      "prompt": "支払い方法ページのメディカルローン説明として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "月々3,000円以上で3回〜84回の分割が可能で、審査だけでも承っている" },
+        { "id": "b", "label": "B", "text": "2回払いのみで、事前審査は受け付けていない" },
+        { "id": "c", "label": "C", "text": "処置後にローン申込を行うのが原則である" },
+        { "id": "d", "label": "D", "text": "通帳や身分証は不要で、口頭申込のみで完了する" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "支払い方法ページでは、メディカルローンは月々3,000円以上で3回〜84回の分割が可能で、審査のみも受付と案内されています。",
+      "difficulty": "medium",
+      "tags": ["メディカルローン", "分割払い", "事前審査"]
+    },
+    {
+      "id": "contract-payment-q5",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "title": "費用説明で意識したい一般原則",
+      "prompt": "一般的な医療説明の考え方に照らして、費用説明で最も望ましいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "他の選択肢との費用差は触れず、最初に勧めた内容だけを伝える" },
+        { "id": "b", "label": "B", "text": "検査や治療の選択肢によって費用差が大きい場合は、その違いも分かるように整理する" },
+        { "id": "c", "label": "C", "text": "費用説明は会計直前まで行わない方がよい" },
+        { "id": "d", "label": "D", "text": "見積もりは不要で、その場の口頭案内だけで十分である" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "厚生労働省の診療情報提供に関する考え方では、選択肢によって費用差が大きいときは、その情報も理解できるよう説明することが望ましいとされています。コンシェルジュの費用案内でも重要な視点です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "費用説明", "見積もり"]
+    },
+    {
+      "id": "contract-payment-s1",
+      "categoryId": "contract-payment",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "分割払いとカード利用の相談",
+      "prompt": "公開サイトの支払い案内に沿って、支払い方法を相談される場面を想定します。",
+      "situation": "お客様から、分割で払いたいことと、ご家族名義のカードが使えるかを聞かれています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "分割で払いたいのですが、どんな方法がありますか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "分割払いは一切ないと伝える",
+              "feedback": "公開サイトでは、カード会社条件やメディカルローンによる分割案内があります。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "クレジットカードの分割条件や、メディカルローンの事前審査案内があると伝える",
+              "nextStepId": "step-2",
+              "feedback": "支払い方法ページに沿った自然な案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "現金一括のみ対応と伝える",
+              "feedback": "公開されている支払い方法と一致しません。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "家族名義のクレジットカードを使いたいのですが、大丈夫ですか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "名義人がいなくても、家族カードならそのまま使えると伝える",
+              "feedback": "公開案内では、家族名義カードは名義人同伴の場合に利用可能とされています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "本人名義カードが基本で、家族名義カードは名義人同伴で利用可能と伝える",
+              "feedback": "支払い方法ページの案内に沿った説明です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "家族名義カードしか利用できないと伝える",
+              "feedback": "公開案内の内容と逆です。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "分割払いの選択肢とカード名義の条件を、公開情報どおりに整理して案内できています。",
+      "feedbackIncorrect": "支払い方法ページでは、カードの名義条件やメディカルローンの事前審査可否が具体的に案内されています。",
+      "explanation": "会計案内では、支払い方法の選択肢だけでなく、本人名義カードの原則やメディカルローンの事前審査など、公開条件を正しく伝えることが大切です。",
+      "difficulty": "medium",
+      "tags": ["支払い方法", "カード", "メディカルローン"]
+    }
+  ]
+}

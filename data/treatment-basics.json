@@ -1,0 +1,147 @@
+{
+  "categoryId": "treatment-basics",
+  "overview": "メインサイトとメンズサイトの公開情報をもとに、コンシェルジュが押さえたい施術カテゴリ案内を確認します。",
+  "questions": [
+    {
+      "id": "treatment-basics-q1",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "メンズサイトの代表的な悩みと施術例",
+      "prompt": "メンズサイトの掲載内容に合う組み合わせはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "シミ・そばかすにはIPL光治療が案内されている" },
+        { "id": "b", "label": "B", "text": "シミ・そばかすにはセラミック治療が案内されている" },
+        { "id": "c", "label": "C", "text": "シワには医療脱毛だけが案内されている" },
+        { "id": "d", "label": "D", "text": "AGAには二重術が案内されている" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "メンズサイトでは、シミ・そばかすに対する施術例としてIPL光治療が案内されています。",
+      "difficulty": "easy",
+      "tags": ["メンズ", "施術カテゴリ", "案内"]
+    },
+    {
+      "id": "treatment-basics-q2",
+      "categoryId": "treatment-basics",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "男性美容の範囲",
+      "prompt": "メンズサイトの案内では、男性向け美容医療は手術中心で、ニキビやしわなどの美容皮膚科相談はほとんど想定されていない。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "ほとんど想定されていない" },
+        { "id": "false", "label": "×", "text": "皮膚科系の悩みも広く案内されている" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "メンズサイトでは、ニキビ・毛穴・シミ・しわ・若返りなどの美容皮膚科領域も公開案内されています。",
+      "difficulty": "easy",
+      "tags": ["メンズ", "美容皮膚科", "悩み"]
+    },
+    {
+      "id": "treatment-basics-q3",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "男性向け目元施術の案内",
+      "prompt": "メンズサイトの目元施術案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "切開法しか案内されておらず、切らない選択肢はない" },
+        { "id": "b", "label": "B", "text": "埋没法から切開法まで案内があり、ダウンタイムが短い選択肢にも触れられている" },
+        { "id": "c", "label": "C", "text": "男性向けの目元施術ページは存在しない" },
+        { "id": "d", "label": "D", "text": "目元施術はすべて長期休暇必須と案内されている" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "メンズサイトでは、切らない二重整形から切開法まで掲載され、仕事が忙しい方向けにダウンタイム面へ配慮した案内も見られます。",
+      "difficulty": "medium",
+      "tags": ["目元", "メンズ", "ダウンタイム"]
+    },
+    {
+      "id": "treatment-basics-q4",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "メインサイトの施術カテゴリ理解",
+      "prompt": "メインサイトの掲載カテゴリに照らして、医療レーザー脱毛はどの案内群に含まれていますか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "お身体" },
+        { "id": "b", "label": "B", "text": "歯科" },
+        { "id": "c", "label": "C", "text": "髪" },
+        { "id": "d", "label": "D", "text": "メディア紹介" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "メインサイトでは、医療レーザー脱毛は「Body お身体」のカテゴリ内に掲載されています。",
+      "difficulty": "medium",
+      "tags": ["カテゴリ理解", "脱毛", "メインサイト"]
+    },
+    {
+      "id": "treatment-basics-s1",
+      "categoryId": "treatment-basics",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "男性のお客様から施術範囲を聞かれた場面",
+      "prompt": "メンズサイトの公開情報に沿って、相談できる施術領域を案内します。",
+      "situation": "男性のお客様から「ここは手術中心ですか？肌悩みも相談できますか？」と質問されています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "ニキビやしわの相談でも大丈夫ですか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "男性向けは外科中心なので、肌悩みの相談は難しいと伝える",
+              "feedback": "メンズサイトでは、ニキビやしわなど美容皮膚科の悩みも広く掲載されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "肌トラブルや若返りの相談も多く、悩みに応じて案内できると伝える",
+              "nextStepId": "step-2",
+              "feedback": "公開されている施術カテゴリに沿った説明です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "まず外科手術を前提に考えてもらうよう勧める",
+              "feedback": "公開情報の施術範囲を狭く伝えすぎています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "男性専用で相談しやすい院はありますか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "男性専門の案内はなく、どの院でも同じとだけ伝える",
+              "feedback": "メンズサイトでは「メンズ専門院」も案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "メンズ専門院の案内があり、相談しやすい環境も公開されていると伝える",
+              "feedback": "メンズサイトの「選ばれる理由」に沿った案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "男性向け相談は電話ではなく来院のみ対応と伝える",
+              "feedback": "メンズサイトではWEB予約や電話相談導線も案内されています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "男性向け美容医療の公開領域と、相談しやすい導線を適切に案内できています。",
+      "feedbackIncorrect": "メンズサイトでは、手術だけでなく肌悩みや若返り相談、メンズ専門院の案内も公開されています。",
+      "explanation": "コンシェルジュは、悩みの種類に応じて外科・皮膚科・男性向け相談のどこにつながるかを、公開情報ベースで整理して案内することが重要です。",
+      "difficulty": "medium",
+      "tags": ["メンズ", "施術範囲", "案内"]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "reception-flow",
+    "title": "受付フロー",
+    "description": "来院からお見送りまでの初動と受付導線を確認するカテゴリです。",
+    "icon": "ClipboardCheck",
+    "accent": "#f97316",
+    "surface": "#fff7ed",
+    "border": "#fdba74",
+    "totalQuestions": 5,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "counseling-basics",
+    "title": "カウンセリング基礎",
+    "description": "お悩みの聞き取りと安心感のある案内姿勢を学びます。",
+    "icon": "MessageSquareHeart",
+    "accent": "#ec4899",
+    "surface": "#fdf2f8",
+    "border": "#f9a8d4",
+    "totalQuestions": 5,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "treatment-basics",
+    "title": "施術・メニュー基礎知識",
+    "description": "施術カテゴリやダウンタイム、説明の基本姿勢を整理します。",
+    "icon": "Sparkles",
+    "accent": "#d97706",
+    "surface": "#fffbeb",
+    "border": "#fcd34d",
+    "totalQuestions": 5,
+    "estimatedMinutes": 9
+  },
+  {
+    "id": "contract-payment",
+    "title": "契約・会計基礎",
+    "description": "契約前確認と会計案内の抜け漏れを防ぐ基礎を身につけます。",
+    "icon": "WalletCards",
+    "accent": "#14b8a6",
+    "surface": "#ecfeff",
+    "border": "#99f6e4",
+    "totalQuestions": 5,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "inquiry-handling",
+    "title": "問い合わせ・電話対応",
+    "description": "電話・メール・予約変更の一次対応を練習します。",
+    "icon": "PhoneCall",
+    "accent": "#3b82f6",
+    "surface": "#eff6ff",
+    "border": "#93c5fd",
+    "totalQuestions": 5,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "compliance-complaint",
+    "title": "個人情報・クレーム初期対応",
+    "description": "守秘と初期対応の基本をコンパクトに確認します。",
+    "icon": "ShieldAlert",
+    "accent": "#ef4444",
+    "surface": "#fef2f2",
+    "border": "#fca5a5",
+    "totalQuestions": 5,
+    "estimatedMinutes": 9
+  }
+]

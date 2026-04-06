@@ -1,0 +1,163 @@
+{
+  "categoryId": "reception-flow",
+  "overview": "公式サイトの公開情報をもとに、予約導線・来院時の受付・初診案内の流れを確認します。",
+  "questions": [
+    {
+      "id": "reception-flow-q1",
+      "categoryId": "reception-flow",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "予約方法の案内",
+      "prompt": "「施術までの流れ」ページの案内として正しい予約方法はどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "電話予約のみ" },
+        { "id": "b", "label": "B", "text": "電話とWEB予約のみ" },
+        { "id": "c", "label": "C", "text": "電話・WEB・メール予約" },
+        { "id": "d", "label": "D", "text": "LINE予約のみ" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "公式サイトの「施術までの流れ」では、電話・WEB・メールで予約可能と案内されています。",
+      "difficulty": "easy",
+      "tags": ["予約", "導線", "受付"]
+    },
+    {
+      "id": "reception-flow-q2",
+      "categoryId": "reception-flow",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "title": "施術が未定のお客様",
+      "prompt": "受ける施術がまだ決まっていないお客様は、カウンセリング予約を取ることができない。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "予約できない" },
+        { "id": "false", "label": "×", "text": "相談段階でも予約できる" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "公開サイトでは、具体的な治療が分からない段階でも相談内容を伝えて予約でき、当日に施術を受けるか判断してよいと案内されています。",
+      "difficulty": "easy",
+      "tags": ["予約", "初診", "カウンセリング"]
+    },
+    {
+      "id": "reception-flow-q3",
+      "categoryId": "reception-flow",
+      "type": "order",
+      "knowledgeType": "sbc-specific",
+      "title": "来院後の基本順序",
+      "prompt": "公式サイトの流れに沿った来院後の順序として、最も自然なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "受付へ行く → 問診票を記入する → ドクターと詳しく相談する" },
+        { "id": "b", "label": "B", "text": "ドクターと相談する → 受付へ行く → 問診票を記入する" },
+        { "id": "c", "label": "C", "text": "会計をする → 問診票を記入する → ドクターと相談する" },
+        { "id": "d", "label": "D", "text": "施術を受ける → 受付へ行く → ドクターと相談する" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "「施術までの流れ」では、来院後はまず受付へ行き、問診票記入後にドクターへ相談する流れが案内されています。",
+      "difficulty": "medium",
+      "tags": ["来院", "問診票", "導線"]
+    },
+    {
+      "id": "reception-flow-q4",
+      "categoryId": "reception-flow",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "title": "予約受付時間の理解",
+      "prompt": "公開サイトの予約案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "電話受付は24時間で、WEB予約は日中のみ" },
+        { "id": "b", "label": "B", "text": "電話受付は10:00〜23:00、WEB予約は24時間対応と案内されている" },
+        { "id": "c", "label": "C", "text": "電話受付は平日のみ、WEB予約は会員登録不要" },
+        { "id": "d", "label": "D", "text": "予約キャンセルは窓口来院時のみ対応している" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "メインサイト・メンズサイトともに電話受付時間は10:00〜23:00、WEB予約は24時間対応と記載されています。",
+      "difficulty": "medium",
+      "tags": ["電話対応", "WEB予約", "MySBC"]
+    },
+    {
+      "id": "reception-flow-q5",
+      "categoryId": "reception-flow",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "title": "受付での問診票記入と個人情報",
+      "prompt": "医療機関の受付でお客様自身が問診票へ身体状況や病状を記入して受診を申し出ることは、必要な個人情報取得を前提とした行為と考えられる。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "別途まったく別の前提が必要" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "個人情報保護委員会の医療・介護関係事業者向けQ&Aでは、受付で問診票に記入して受診を申し出る行為は、必要な要配慮個人情報を医療機関が取得する前提があると解されています。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "受付", "個人情報"]
+    },
+    {
+      "id": "reception-flow-s1",
+      "categoryId": "reception-flow",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "title": "施術が未定のお客様からの予約相談",
+      "prompt": "公開サイトの案内に沿って、相談段階のお客様へ予約導線を案内します。",
+      "situation": "お客様から「悩みはあるけれど、どの施術が合うかまだ分からない」と相談を受けています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "まだ受けたい施術が決まっていないのですが、予約しても大丈夫ですか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "施術名が決まってからでないと予約は取れません",
+              "feedback": "公開サイトでは、相談段階でも予約可能と案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "希望日時と相談内容をうかがい、専門ドクターのカウンセリング予約をご案内する",
+              "nextStepId": "step-2",
+              "feedback": "公式の来院導線に沿った自然な案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "まず施術料金だけ見てから予約するよう勧める",
+              "feedback": "公開サイトでは、まず相談して判断してよい流れが示されています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "予約したら、その日に必ず施術まで決めないといけませんか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "予約した場合は、その日のうちに必ず施術まで進む必要があります",
+              "feedback": "公式サイトでは、その日の判断でカウンセリングのみで帰宅しても問題ないと案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "カウンセリングで最適な治療を把握したうえで、当日に施術するか判断して大丈夫です",
+              "feedback": "公開サイトの説明に沿った案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "施術を受けない場合は予約自体が無効になります",
+              "feedback": "カウンセリングのみでの帰宅も問題ないと公開案内されています。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "予約導線と当日の判断の自由度を、公開情報どおりに案内できています。",
+      "feedbackIncorrect": "公式サイトでは、相談段階でも予約でき、施術の実施は当日判断でよいと案内されています。",
+      "explanation": "受付・予約案内では、悩みが明確でなくても予約可能であり、来院後に受付・問診票記入・ドクター相談へ進む流れを分かりやすく伝えることが大切です。",
+      "difficulty": "medium",
+      "tags": ["予約案内", "初診", "受付"]
+    }
+  ]
+}

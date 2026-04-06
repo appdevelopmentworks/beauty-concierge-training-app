@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --font-body: "Aptos", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --background: oklch(0.992 0.008 17);
+  --foreground: oklch(0.255 0.025 20);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.255 0.025 20);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.255 0.025 20);
+  --primary: oklch(0.675 0.112 28);
+  --primary-foreground: oklch(0.985 0.01 25);
+  --secondary: oklch(0.973 0.012 22);
+  --secondary-foreground: oklch(0.385 0.04 18);
+  --muted: oklch(0.97 0.008 20);
+  --muted-foreground: oklch(0.57 0.024 20);
+  --accent: oklch(0.958 0.027 29);
+  --accent-foreground: oklch(0.385 0.04 18);
+  --destructive: oklch(0.622 0.215 25);
+  --border: oklch(0.91 0.02 18);
+  --input: oklch(0.94 0.014 22);
+  --ring: oklch(0.735 0.089 27);
+  --radius: 1.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-background text-foreground antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(251, 207, 232, 0.35), transparent 30%),
+    radial-gradient(circle at top right, rgba(253, 230, 138, 0.28), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 250, 248, 0.98) 100%);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(244, 114, 182, 0.18);
+}
+
+.app-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.94) 32%, rgba(255, 249, 246, 0.98) 100%);
+  backdrop-filter: blur(18px);
+}
+
+.soft-ring {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.72),
+    0 12px 30px rgba(180, 118, 93, 0.08);
+}
+
+.status-chip {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
