@@ -7,26 +7,26 @@
     "accent": "#f97316",
     "surface": "#fff7ed",
     "border": "#fdba74",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 4,
-      "general": 1
+      "sbcSpecific": 8,
+      "general": 2
     }
   },
   {
     "id": "counseling-basics",
     "title": "カウンセリング基礎",
-    "description": "お悩みの聞き取りと安心感のある案内姿勢を学びます。",
+    "description": "お悩みの聞き取りと、SBCらしい安心感のある案内姿勢を学びます。",
     "icon": "MessageSquareHeart",
     "accent": "#ec4899",
     "surface": "#fdf2f8",
     "border": "#f9a8d4",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 3,
-      "general": 2
+      "sbcSpecific": 7,
+      "general": 3
     }
   },
   {
@@ -37,11 +37,11 @@
     "accent": "#d97706",
     "surface": "#fffbeb",
     "border": "#fcd34d",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 4,
-      "general": 1
+      "sbcSpecific": 8,
+      "general": 2
     }
   },
   {
@@ -52,11 +52,11 @@
     "accent": "#14b8a6",
     "surface": "#ecfeff",
     "border": "#99f6e4",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 4,
-      "general": 1
+      "sbcSpecific": 8,
+      "general": 2
     }
   },
   {
@@ -67,26 +67,26 @@
     "accent": "#3b82f6",
     "surface": "#eff6ff",
     "border": "#93c5fd",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 4,
-      "general": 1
+      "sbcSpecific": 8,
+      "general": 2
     }
   },
   {
     "id": "compliance-complaint",
     "title": "個人情報・クレーム初期対応",
-    "description": "守秘と初期対応の基本をコンパクトに確認します。",
+    "description": "守秘・クレーム初期対応・エスカレーションの基本を確認します。",
     "icon": "ShieldAlert",
     "accent": "#ef4444",
     "surface": "#fef2f2",
     "border": "#fca5a5",
-    "totalQuestions": 7,
-    "estimatedMinutes": 10,
+    "totalQuestions": 10,
+    "estimatedMinutes": 14,
     "knowledgeMix": {
-      "sbcSpecific": 3,
-      "general": 2
+      "sbcSpecific": 6,
+      "general": 4
     }
   }
 ]

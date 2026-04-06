@@ -10,6 +10,10 @@
       {
         "label": "SBC採用 コンシェルジュ募集要項",
         "url": "https://www.sbc-recruit.com/global/description/p2705/"
+      },
+      {
+        "label": "SBC採用 理念・ビジョン",
+        "url": "https://www.sbc-recruit.com/counselor/sbc/vision/"
       }
     ],
     "general": [
@@ -20,6 +24,71 @@
       {
         "label": "患者の権利と義務",
         "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "カウンセリング前チェックリスト",
+    "description": "お客様の不安を減らし、SBCらしい案内姿勢を保つための確認項目です。",
+    "items": [
+      {
+        "id": "hearing-first",
+        "title": "最初に悩みと希望を丁寧に聞く",
+        "description": "提案より先に、お客様の背景や不安、希望を整理して受け止める。",
+        "sources": [
+          {
+            "label": "SBC採用 コンシェルジュ募集要項",
+            "url": "https://www.sbc-recruit.com/global/description/p2705/"
+          }
+        ]
+      },
+      {
+        "id": "no-pressure",
+        "title": "無理な勧誘をしない",
+        "description": "公開方針に沿って、契約や施術を急がせる案内を避ける。",
+        "sources": [
+          {
+            "label": "SBCについて",
+            "url": "https://www.s-b-c.net/about/"
+          }
+        ]
+      },
+      {
+        "id": "fit-before-sell",
+        "title": "適応確認を優先する",
+        "description": "お客様が望んでも、適応でない内容は勧めない前提で案内する。",
+        "sources": [
+          {
+            "label": "SBCについて",
+            "url": "https://www.s-b-c.net/about/"
+          }
+        ]
+      },
+      {
+        "id": "allow-takeaway",
+        "title": "持ち帰り検討を許容する",
+        "description": "内容を理解した上で、当日決めずに帰宅や再検討もできると伝える。",
+        "sources": [
+          {
+            "label": "SBC 施術までの流れ",
+            "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+          },
+          {
+            "label": "患者の権利と義務",
+            "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+          }
+        ]
+      },
+      {
+        "id": "sbc-vision",
+        "title": "SBCの理念を思い出す",
+        "description": "お客様・スタッフ・社会の三方に価値を生む視点で提案姿勢を整える。",
+        "sources": [
+          {
+            "label": "SBC採用 理念・ビジョン",
+            "url": "https://www.sbc-recruit.com/counselor/sbc/vision/"
+          }
+        ]
       }
     ]
   },
@@ -188,6 +257,12 @@
           "speaker": "お客様",
           "message": "相談に行ったら、強く勧誘されるのではないかと心配です。",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCについて",
+              "url": "https://www.s-b-c.net/about/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -216,6 +291,12 @@
           "speaker": "お客様",
           "message": "もし話を聞いて、自分に合わないと思ったらどうなりますか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 施術までの流れ",
+              "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -244,6 +325,149 @@
       "explanation": "コンシェルジュのカウンセリングでは、悩みや希望を丁寧に聞きながら、お客様が納得して判断できるように案内する姿勢が重要です。",
       "difficulty": "medium",
       "tags": ["勧誘方針", "カウンセリング", "提案姿勢"]
+    },
+    {
+      "id": "counseling-basics-q7",
+      "categoryId": "counseling-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 理念・ビジョン",
+          "url": "https://www.sbc-recruit.com/counselor/sbc/vision/"
+        }
+      ],
+      "title": "SBCの理念理解",
+      "prompt": "採用サイトの理念・ビジョンページに照らして、SBCがめざすものとして最も近いのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "お客様だけが満足すればよく、スタッフや社会への視点は不要である" },
+        { "id": "b", "label": "B", "text": "スタッフの働きやすさだけを最優先する" },
+        { "id": "c", "label": "C", "text": "お客様・スタッフ・社会の三方にとって価値を生むことをめざしている" },
+        { "id": "d", "label": "D", "text": "短期的な利益のみを重視する" }
+      ],
+      "correctAnswer": "c",
+      "explanation": "採用サイトの理念・ビジョンでは、SBCは「究極の三方良し」を掲げ、お客様・スタッフ・社会の三方に価値を生むことをめざしています。",
+      "difficulty": "easy",
+      "tags": ["理念", "文化", "SBC独自"]
+    },
+    {
+      "id": "counseling-basics-q8",
+      "categoryId": "counseling-basics",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "納得前の意思決定",
+      "prompt": "一般的な医療の考え方では、十分に納得できない場合、患者様はその場で即決せずに持ち帰って検討することもできる。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "必ずその場で決める必要がある" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "患者様には自分の意思で治療や検査を選択する権利があります。十分に納得できない場合に持ち帰って検討することも尊重されるべき判断です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "患者の権利", "意思決定"]
+    },
+    {
+      "id": "counseling-basics-s2",
+      "categoryId": "counseling-basics",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC採用 理念・ビジョン",
+          "url": "https://www.sbc-recruit.com/counselor/sbc/vision/"
+        },
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
+      "title": "友人と同じ施術を急いで希望するお客様への案内",
+      "prompt": "SBCの理念と公開方針に沿って、適応確認と意思決定を急がせない案内を行います。",
+      "situation": "お客様から「友人と同じ施術を今日中に契約したい」と相談されています。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "友達と同じ施術を今日すぐ契約したいです。私に合うかは後でいいです。",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC採用 理念・ビジョン",
+              "url": "https://www.sbc-recruit.com/counselor/sbc/vision/"
+            },
+            {
+              "label": "SBC 5つの約束",
+              "url": "https://www.s-b-c.net/about/"
+            }
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "ご希望があるなら、適応確認前でもそのまま契約を進める",
+              "feedback": "SBCの公開方針では、お客様起点で適応や納得を確認した上で案内する姿勢が重視されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "まず悩みや希望を聞き、適応や他の選択肢も含めて案内すると伝える",
+              "nextStepId": "step-2",
+              "feedback": "お客様起点で考え、適応を確認しながら提案するSBCらしい案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "友人と同じ内容なら説明は不要と伝える",
+              "feedback": "一人ひとりに合う内容を確認する姿勢が必要です。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "もし私に合わない内容なら、断っても大丈夫ですか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 施術までの流れ",
+              "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+            }
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "一度説明を聞いたら、その日に契約するのが前提と伝える",
+              "feedback": "公開サイトでは、カウンセリングだけで帰宅して検討することも問題ないと案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "内容を確認した上で、当日決めずに持ち帰って検討しても大丈夫と伝える",
+              "feedback": "納得して決められるよう支える案内です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "予算が合えば適応確認は後回しでよいと伝える",
+              "feedback": "適応確認や納得形成を省く案内は不適切です。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "お客様起点の提案姿勢と、納得して決められる導線を両立して案内できています。",
+      "feedbackIncorrect": "SBCの公開方針では、適応確認を行いながら、お客様が納得して判断できるよう支える姿勢が重視されています。",
+      "explanation": "コンシェルジュは、希望をそのまま通すのではなく、お客様に合う選択肢を整理し、急がせずに判断を支える姿勢を持つことが大切です。",
+      "difficulty": "medium",
+      "tags": ["理念", "提案姿勢", "カウンセリング"]
     }
   ]
 }

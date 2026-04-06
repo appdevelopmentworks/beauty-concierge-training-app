@@ -12,7 +12,7 @@ export default function CategoriesPage() {
       <section className="space-y-2">
         <h2 className="text-xl font-semibold text-foreground">カテゴリ一覧</h2>
         <p className="text-sm leading-6 text-muted-foreground">
-          6カテゴリ・各5問のダミー問題を収録しています。途中からでもそのまま再開できます。
+          6カテゴリ・合計60問とチェックリスト学習を収録しています。途中からでもそのまま再開できます。
         </p>
       </section>
 

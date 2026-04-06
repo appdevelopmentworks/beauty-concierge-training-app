@@ -10,12 +10,81 @@
       {
         "label": "SBC 施術カテゴリ一覧",
         "url": "https://www.s-b-c.net/"
+      },
+      {
+        "label": "SBCメンズ エイジングケア",
+        "url": "https://www.sbc-mens.net/contents/anti/"
       }
     ],
     "general": [
       {
         "label": "厚生労働省 医療広告規制の事例解説書",
         "url": "https://www.mhlw.go.jp/content/10800000/001153837.pdf"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "施術案内チェックリスト",
+    "description": "施術カテゴリ案内で誤解を生まないために、事前に整理しておきたい項目です。",
+    "items": [
+      {
+        "id": "organize-concern",
+        "title": "悩みをカテゴリで整理する",
+        "description": "目元、肌悩み、若返り、脱毛など、悩みをカテゴリに分けて聞き直す。",
+        "sources": [
+          {
+            "label": "SBC公式トップ",
+            "url": "https://www.s-b-c.net/"
+          },
+          {
+            "label": "SBCメンズ公式トップ",
+            "url": "https://www.sbc-mens.net/"
+          }
+        ]
+      },
+      {
+        "id": "mens-not-only-surgery",
+        "title": "メンズは外科だけではない",
+        "description": "ニキビ、しわ、シミなど美容皮膚科領域も案内対象に含める。",
+        "sources": [
+          {
+            "label": "SBCメンズ公式トップ",
+            "url": "https://www.sbc-mens.net/"
+          }
+        ]
+      },
+      {
+        "id": "aging-care-options",
+        "title": "若返り領域の広さを把握する",
+        "description": "注射、レーザー、ダーマペン、外科など複数の選択肢がある前提で整理する。",
+        "sources": [
+          {
+            "label": "SBCメンズ エイジングケア",
+            "url": "https://www.sbc-mens.net/contents/anti/"
+          }
+        ]
+      },
+      {
+        "id": "specialized-environment",
+        "title": "相談しやすい環境を案内する",
+        "description": "メンズ専門院や無料カウンセリングなど、相談導線の安心材料を添える。",
+        "sources": [
+          {
+            "label": "SBCメンズ公式トップ",
+            "url": "https://www.sbc-mens.net/"
+          }
+        ]
+      },
+      {
+        "id": "avoid-overclaim",
+        "title": "効果を断定しない",
+        "description": "ビフォーアフターや体験談だけで断定せず、個人差や診察前提を忘れない。",
+        "sources": [
+          {
+            "label": "厚生労働省 医療広告規制の事例解説書",
+            "url": "https://www.mhlw.go.jp/content/10800000/001153837.pdf"
+          }
+        ]
       }
     ]
   },
@@ -180,6 +249,12 @@
           "speaker": "お客様",
           "message": "ニキビやしわの相談でも大丈夫ですか？",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCメンズ公式",
+              "url": "https://www.sbc-mens.net/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -208,6 +283,12 @@
           "speaker": "お客様",
           "message": "男性専用で相談しやすい院はありますか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCメンズ公式",
+              "url": "https://www.sbc-mens.net/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -236,6 +317,76 @@
       "explanation": "コンシェルジュは、悩みの種類に応じて外科・皮膚科・男性向け相談のどこにつながるかを、公開情報ベースで整理して案内することが重要です。",
       "difficulty": "medium",
       "tags": ["メンズ", "施術範囲", "案内"]
+    },
+    {
+      "id": "treatment-basics-q7",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ エイジングケア",
+          "url": "https://www.sbc-mens.net/contents/anti/"
+        }
+      ],
+      "title": "メンズエイジングケアの悩み例",
+      "prompt": "メンズエイジングケアページで公開されている悩みとして近いものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "シミ、しわ、目の下のクマ・たるみなど" },
+        { "id": "b", "label": "B", "text": "歯列矯正や虫歯治療のみ" },
+        { "id": "c", "label": "C", "text": "整形外科の関節痛のみ" },
+        { "id": "d", "label": "D", "text": "男性の悩みは脱毛だけと案内されている" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "メンズエイジングケアページでは、シミ、しわ、目の下のクマ・たるみなど、加齢に伴う悩みが幅広く紹介されています。",
+      "difficulty": "easy",
+      "tags": ["メンズ", "エイジングケア", "悩み"]
+    },
+    {
+      "id": "treatment-basics-q8",
+      "categoryId": "treatment-basics",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCメンズ エイジングケア",
+          "url": "https://www.sbc-mens.net/contents/anti/"
+        }
+      ],
+      "title": "若返り施術の案内範囲",
+      "prompt": "メンズエイジングケアページでは、ヒアルロン酸やダーマペン、ピコレーザーなど複数カテゴリの施術が案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "外科手術しか案内されていない" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "エイジングケアページでは、注射、レーザー、ダーマペン、外科手術など複数カテゴリの施術が公開されています。",
+      "difficulty": "easy",
+      "tags": ["エイジングケア", "施術カテゴリ", "メンズ"]
+    },
+    {
+      "id": "treatment-basics-q9",
+      "categoryId": "treatment-basics",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "厚生労働省 医療広告規制の事例解説書",
+          "url": "https://www.mhlw.go.jp/content/10800000/001153837.pdf"
+        }
+      ],
+      "title": "施術説明で避けたい表現",
+      "prompt": "一般的な医療広告・案内の考え方として、避けるべきなのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "効果やダウンタイムには個人差があると伝える" },
+        { "id": "b", "label": "B", "text": "診察前から誰でも同じ仕上がりになると断定する" },
+        { "id": "c", "label": "C", "text": "公開されている施術カテゴリを整理して案内する" },
+        { "id": "d", "label": "D", "text": "リスクや回復目安もあわせて説明する" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "医療広告規制の考え方では、効果を断定したり誤認を招く表現は避ける必要があります。施術説明では個人差への配慮が重要です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "医療広告", "説明姿勢"]
     }
   ]
 }

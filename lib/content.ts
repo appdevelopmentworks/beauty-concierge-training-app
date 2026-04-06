@@ -7,7 +7,9 @@ import receptionFlowJson from "@/data/reception-flow.json";
 import treatmentBasicsJson from "@/data/treatment-basics.json";
 import type {
   Category,
+  CategoryChecklist,
   CategoryContent,
+  ChecklistItem,
   Choice,
   Difficulty,
   KnowledgeMix,
@@ -51,6 +53,30 @@ function parseSourceLink(value: unknown, path: string): SourceLink {
   return {
     label: parseString(value.label, `${path}.label`),
     url: parseString(value.url, `${path}.url`),
+  };
+}
+
+function parseChecklistItem(value: unknown, path: string): ChecklistItem {
+  invariant(isRecord(value), `${path} must be an object`);
+
+  return {
+    id: parseString(value.id, `${path}.id`),
+    title: parseString(value.title, `${path}.title`),
+    description: parseString(value.description, `${path}.description`),
+    sources: Array.isArray(value.sources)
+      ? value.sources.map((source, index) => parseSourceLink(source, `${path}.sources[${index}]`))
+      : undefined,
+  };
+}
+
+function parseCategoryChecklist(value: unknown, path: string): CategoryChecklist {
+  invariant(isRecord(value), `${path} must be an object`);
+  invariant(Array.isArray(value.items), `${path}.items must be an array`);
+
+  return {
+    title: parseString(value.title, `${path}.title`),
+    description: parseString(value.description, `${path}.description`),
+    items: value.items.map((item, index) => parseChecklistItem(item, `${path}.items[${index}]`)),
   };
 }
 
@@ -104,6 +130,9 @@ function parseScenarioStep(value: unknown, path: string): ScenarioStep {
     speaker: parseString(value.speaker, `${path}.speaker`),
     message: parseString(value.message, `${path}.message`),
     prompt: parseString(value.prompt, `${path}.prompt`),
+    sources: Array.isArray(value.sources)
+      ? value.sources.map((source, index) => parseSourceLink(source, `${path}.sources[${index}]`))
+      : undefined,
     choices: value.choices.map((choice, index) => parseScenarioChoice(choice, `${path}.choices[${index}]`)),
     correctChoiceId: parseString(value.correctChoiceId, `${path}.correctChoiceId`),
   };
@@ -175,6 +204,7 @@ function parseCategoryContent(value: unknown, path: string): CategoryContent {
   invariant(isRecord(value), `${path} must be an object`);
   invariant(Array.isArray(value.questions), `${path}.questions must be an array`);
   invariant(isRecord(value.referenceSources), `${path}.referenceSources must be an object`);
+  invariant(isRecord(value.checklist), `${path}.checklist must be an object`);
 
   const referenceSources = value.referenceSources;
 
@@ -193,6 +223,7 @@ function parseCategoryContent(value: unknown, path: string): CategoryContent {
           )
         : [],
     },
+    checklist: parseCategoryChecklist(value.checklist, `${path}.checklist`),
     questions: value.questions.map((question, index) => parseQuestion(question, `${path}.questions[${index}]`)),
   };
 }
@@ -234,6 +265,10 @@ export function getCategoryContent(categoryId: string) {
 
 export function getQuestionsByCategory(categoryId: string) {
   return getCategoryContent(categoryId)?.questions ?? [];
+}
+
+export function getChecklistByCategory(categoryId: string) {
+  return getCategoryContent(categoryId)?.checklist ?? null;
 }
 
 export function getQuestionByIndex(categoryId: string, questionIndex: number) {

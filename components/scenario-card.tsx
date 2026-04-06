@@ -46,6 +46,7 @@ export function ScenarioCard({
   );
 
   const currentStepNumber = question.steps.findIndex((step) => step.id === currentStep?.id) + 1;
+  const currentStepSources = currentStep?.sources?.length ? currentStep.sources : sources;
 
   const handleSelect = (choiceId: string) => {
     if (!currentStep || resolved) {
@@ -113,6 +114,7 @@ export function ScenarioCard({
               <p className="text-xs leading-5 text-muted-foreground">
                 正しい対応を選ぶと次の会話へ進みます。誤った対応はその場で振り返ります。
               </p>
+              <SourceLinks sources={currentStepSources} compact className="pt-1" />
             </div>
 
             <div className="space-y-3">
@@ -163,7 +165,7 @@ export function ScenarioCard({
               </p>
             ) : null}
             <p className="text-sm leading-6 text-muted-foreground">{question.explanation}</p>
-            <SourceLinks sources={sources} compact />
+            <SourceLinks sources={currentStepSources} compact />
             <Button asChild className="w-full">
               <Link href={nextHref}>
                 次へ進む

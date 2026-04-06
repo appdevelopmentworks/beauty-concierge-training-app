@@ -1,7 +1,7 @@
 # Beauty Concierge Training App
 
 SBCコンシェルジュ向け初月研修を想定した、スマホファーストの学習アプリMVPです。  
-Next.js 16 / TypeScript / Tailwind CSS / shadcn/ui ベースで、ダミー問題データと LocalStorage による進捗保存を実装しています。
+Next.js 16 / TypeScript / Tailwind CSS / shadcn/ui ベースで、SBC公開情報と公的ガイダンスをもとにした問題データ、LocalStorage による進捗保存を実装しています。
 
 ## セットアップ
 
@@ -14,16 +14,28 @@ npm run dev
 
 リンクプレビューの絶対 URL を本番環境で正しく出したい場合は、必要に応じて `NEXT_PUBLIC_SITE_URL` を設定してください。
 
+## テスト
+
+```bash
+npm run test:run
+npm run typecheck
+npm run build
+```
+
+Vitest + Testing Library で、コンテンツ読み込み、LocalStorage の進捗保存、主要画面の表示テストを実行できます。
+
 ## 主な機能
 
 - ホーム画面で学習概要を表示
 - 6カテゴリの学習一覧
 - カテゴリ詳細と問題プレビュー
+- カテゴリごとの Checklist Learning
 - 1問ずつ進むクイズ画面
 - 軽量分岐つきの会話シミュレーション画面
 - 結果画面
 - 進捗ダッシュボード
 - 問題ごとの参照元URL表示
+- シナリオ問題の `step` ごとの参照元URL表示
 - カテゴリ別の `SBC独自 / 一般知識` 出題バランス調整
 - LocalStorage による進捗保存
 
@@ -32,6 +44,7 @@ npm run dev
 - `/`
 - `/categories`
 - `/categories/[categoryId]`
+- `/checklists/[categoryId]`
 - `/quiz/[categoryId]/[questionIndex]`
 - `/scenario/[scenarioId]`
 - `/results/[categoryId]`
@@ -39,12 +52,15 @@ npm run dev
 
 ## データ構成
 
-問題データは `data/*.json` でカテゴリごとに分かれています。現在の問題文は、SBCの公開サイトにある予約導線、支払い方法、メンズFAQ、コンシェルジュ採用情報などを軸にしつつ、一部は厚生労働省・個人情報保護委員会の公開ガイダンスをもとに、一般的な美容医療コンシェルジュ知識も補っています。
+問題データは `data/*.json` でカテゴリごとに分かれています。現在は 6カテゴリ・60問構成で、そのうち会話シミュレーションは 8問です。内容は、SBCの公開サイトにある予約導線、支払い方法、メンズFAQ、コンシェルジュ採用情報、理念・ビジョンなどを軸にしつつ、一部は厚生労働省・個人情報保護委員会の公開ガイダンスをもとに、一般的な美容医療コンシェルジュ知識も補っています。
 
 各カテゴリファイルには以下を含めています。
 
 - `referenceSources`: `SBC独自` / `一般知識` ごとの参照元URL
 - `questions[*].knowledgeType`: 問題種別
+- `questions[*].sources`: 問題単位の参照元URL
+- `questions[*].steps[*].sources`: シナリオのステップ単位の参照元URL
+- `checklist.items[*].sources`: チェック項目単位の参照元URL
 - `categories.json` の `knowledgeMix`: 出題順に反映するカテゴリ別比率
 
 - `data/categories.json`
@@ -72,13 +88,13 @@ npm run dev
 
 ## 進捗保存
 
-学習進捗とセッション結果はブラウザの LocalStorage に保存されます。
+学習進捗とチェックリスト確認状態、セッション結果はブラウザの LocalStorage に保存されます。
 
 - 進捗キー: `beauty-concierge-training-progress`
 - 結果キー: `beauty-concierge-training-result`
 
 ## 補足
 
-- 問題内容はダミーデータです
-- 実在の院内ルールを断定せず、初月研修向けの汎用的な実務トーンで記述しています
+- 問題はSBCの公開情報を優先しつつ、必要な箇所のみ一般的な医療・個人情報保護の考え方を補っています
+- 院内限定ルールや非公開オペレーションを断定せず、公開情報ベースの初月研修向けトーンで記述しています
 - DB、ログイン、管理画面はMVP対象外です

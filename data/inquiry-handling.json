@@ -8,6 +8,10 @@
         "url": "https://www.s-b-c.net/about/hoshou/"
       },
       {
+        "label": "SBC 安心保証制度（豊胸・バストの修正）",
+        "url": "https://www.s-b-c.net/about/hoshou/breast//"
+      },
+      {
         "label": "SBCメンズ公式トップ",
         "url": "https://www.sbc-mens.net/"
       },
@@ -20,6 +24,71 @@
       {
         "label": "個人情報保護委員会 FAQ",
         "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "問い合わせ対応チェックリスト",
+    "description": "電話・メール・予約変更の一次対応で、先に整理しておきたい確認項目です。",
+    "items": [
+      {
+        "id": "phone-hours",
+        "title": "電話受付時間を案内できる",
+        "description": "電話受付は 10:00〜23:00 であることを迷わず伝える。",
+        "sources": [
+          {
+            "label": "SBCメンズ公式トップ",
+            "url": "https://www.sbc-mens.net/"
+          }
+        ]
+      },
+      {
+        "id": "mysbc-web",
+        "title": "MySBC と WEB導線を使い分ける",
+        "description": "WEB予約は24時間対応で、MySBC登録が必要な前提を説明する。",
+        "sources": [
+          {
+            "label": "SBCメンズ公式トップ",
+            "url": "https://www.sbc-mens.net/"
+          },
+          {
+            "label": "SBC公式サイト",
+            "url": "https://www.s-b-c.net/"
+          }
+        ]
+      },
+      {
+        "id": "mail-consultation",
+        "title": "無料メール相談の導線を案内する",
+        "description": "予約前でもメール相談できること、ご希望のドクターやコンシェルジュから返答があることを伝える。",
+        "sources": [
+          {
+            "label": "SBC 保証制度",
+            "url": "https://www.s-b-c.net/about/hoshou/"
+          }
+        ]
+      },
+      {
+        "id": "guarantee-consultation",
+        "title": "保証や術後不安は相談導線へつなぐ",
+        "description": "保証の有無にかかわらず、まず診察や相談導線を案内する。",
+        "sources": [
+          {
+            "label": "SBC 安心保証制度（豊胸・バストの修正）",
+            "url": "https://www.s-b-c.net/about/hoshou/breast//"
+          }
+        ]
+      },
+      {
+        "id": "family-inquiry",
+        "title": "家族からの問い合わせは同意範囲を確認する",
+        "description": "家族からの電話でも、本人同意や案内可能範囲を確認するまでは詳細を伝えない。",
+        "sources": [
+          {
+            "label": "個人情報保護委員会 FAQ",
+            "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+          }
+        ]
       }
     ]
   },
@@ -188,6 +257,12 @@
           "speaker": "お客様",
           "message": "今は電話できない時間なのですが、予約キャンセルはどうしたらいいですか？",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC公式サイト",
+              "url": "https://www.s-b-c.net/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -216,6 +291,12 @@
           "speaker": "お客様",
           "message": "再予約もWEBでできますか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCメンズ公式",
+              "url": "https://www.sbc-mens.net/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -244,6 +325,76 @@
       "explanation": "問い合わせ対応では、電話・WEB・MySBCのどの導線を案内すべきかを整理して伝えることが、コンシェルジュの基本です。",
       "difficulty": "medium",
       "tags": ["MySBC", "予約変更", "問い合わせ"]
+    },
+    {
+      "id": "inquiry-handling-q7",
+      "categoryId": "inquiry-handling",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 安心保証制度（豊胸・バストの修正）",
+          "url": "https://www.s-b-c.net/about/hoshou/breast//"
+        }
+      ],
+      "title": "保証の有無と相談対応",
+      "prompt": "SBCの安心保証制度ページでは、保証の有無にかかわらず施術に関する診察や相談は無料で受けられると案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "保証がないと相談できない" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "安心保証制度ページでは、保証の有無にかかわらず、施術に関する診察や相談はいつでも無料と案内されています。",
+      "difficulty": "easy",
+      "tags": ["保証制度", "問い合わせ", "アフターケア"]
+    },
+    {
+      "id": "inquiry-handling-q8",
+      "categoryId": "inquiry-handling",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 安心保証制度（豊胸・バストの修正）",
+          "url": "https://www.s-b-c.net/about/hoshou/breast//"
+        }
+      ],
+      "title": "再施術判断前の確認",
+      "prompt": "安心保証制度ページの案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "再施術は電話で申告した時点で自動的に確定する" },
+        { "id": "b", "label": "B", "text": "再施術の判断には、医師の診察と施術前後写真による判定がある" },
+        { "id": "c", "label": "C", "text": "写真撮影を拒否していても、必ず保証対象となる" },
+        { "id": "d", "label": "D", "text": "保証制度では返金対応が基本である" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "安心保証制度ページでは、再施術の判断にあたり、医師の診察と施術前後写真による判定があると案内されています。",
+      "difficulty": "medium",
+      "tags": ["保証制度", "再施術", "問い合わせ"]
+    },
+    {
+      "id": "inquiry-handling-q9",
+      "categoryId": "inquiry-handling",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "個人情報保護委員会 FAQ",
+          "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+        }
+      ],
+      "title": "家族からの予約内容確認",
+      "prompt": "ご家族だと名乗る方から患者様の予約内容を電話で確認されたとき、最初の対応として最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "関係性だけで判断して、予約内容をそのまま伝える" },
+        { "id": "b", "label": "B", "text": "本人同意の有無や案内可能範囲を確認し、すぐに詳細は伝えない" },
+        { "id": "c", "label": "C", "text": "他の患者様の事例も交えて説明する" },
+        { "id": "d", "label": "D", "text": "予約内容をSNSのDMで案内する" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "第三者提供の考え方では、家族からの問い合わせでも本人同意や案内範囲の確認が重要です。すぐに詳細を伝えない姿勢が基本です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "個人情報", "電話対応"]
     }
   ]
 }

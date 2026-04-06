@@ -10,6 +10,10 @@
       {
         "label": "SBCについて",
         "url": "https://www.s-b-c.net/about/"
+      },
+      {
+        "label": "SBCグループポイント",
+        "url": "https://www.s-b-c.net/about/campaign/point/"
       }
     ],
     "general": [
@@ -20,6 +24,67 @@
       {
         "label": "厚生労働省 インフォームド・コンセント",
         "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukyu3.html"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "契約・会計チェックリスト",
+    "description": "支払い案内の抜け漏れを防ぐために、契約前に確認したい基本項目です。",
+    "items": [
+      {
+        "id": "included-fees",
+        "title": "料金に何が含まれるか確認する",
+        "description": "薬代、アフターケア代、消費税など込みの案内かを整理して伝える。",
+        "sources": [
+          {
+            "label": "SBCについて",
+            "url": "https://www.s-b-c.net/about/"
+          }
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "支払い方法を正確に伝える",
+        "description": "現金、デビットカード、クレジットカード、メディカルローンの違いを整理する。",
+        "sources": [
+          {
+            "label": "SBC お支払い方法",
+            "url": "https://www.s-b-c.net/charge_list/payment/"
+          }
+        ]
+      },
+      {
+        "id": "card-holder-rule",
+        "title": "カード名義条件を確認する",
+        "description": "本人名義が原則で、家族名義カードは名義人同伴が必要なことを忘れない。",
+        "sources": [
+          {
+            "label": "SBC お支払い方法",
+            "url": "https://www.s-b-c.net/charge_list/payment/"
+          }
+        ]
+      },
+      {
+        "id": "loan-screening",
+        "title": "メディカルローンの事前審査導線を伝える",
+        "description": "分割相談では、審査のみ案内できることもあわせて整理する。",
+        "sources": [
+          {
+            "label": "SBC お支払い方法",
+            "url": "https://www.s-b-c.net/charge_list/payment/"
+          }
+        ]
+      },
+      {
+        "id": "points-rules",
+        "title": "ポイントの基本ルールを把握する",
+        "description": "有効期限や予約金対象外など、よく聞かれるポイント条件を確認する。",
+        "sources": [
+          {
+            "label": "SBCグループポイント",
+            "url": "https://www.s-b-c.net/about/campaign/point/"
+          }
+        ]
       }
     ]
   },
@@ -186,6 +251,12 @@
           "speaker": "お客様",
           "message": "分割で払いたいのですが、どんな方法がありますか？",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC お支払い方法",
+              "url": "https://www.s-b-c.net/charge_list/payment/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -214,6 +285,12 @@
           "speaker": "お客様",
           "message": "家族名義のクレジットカードを使いたいのですが、大丈夫ですか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC お支払い方法",
+              "url": "https://www.s-b-c.net/charge_list/payment/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -242,6 +319,76 @@
       "explanation": "会計案内では、支払い方法の選択肢だけでなく、本人名義カードの原則やメディカルローンの事前審査など、公開条件を正しく伝えることが大切です。",
       "difficulty": "medium",
       "tags": ["支払い方法", "カード", "メディカルローン"]
+    },
+    {
+      "id": "contract-payment-q7",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCグループポイント",
+          "url": "https://www.s-b-c.net/about/campaign/point/"
+        }
+      ],
+      "title": "SBCグループポイントの有効期限",
+      "prompt": "SBCグループポイントの有効期限として公開されている内容はどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "最終お会計時より1年間" },
+        { "id": "b", "label": "B", "text": "入会から無期限" },
+        { "id": "c", "label": "C", "text": "施術当日のみ有効" },
+        { "id": "d", "label": "D", "text": "3か月のみ有効" }
+      ],
+      "correctAnswer": "a",
+      "explanation": "SBCグループポイントページでは、ポイントの有効期限は最終お会計時より1年間と案内されています。",
+      "difficulty": "easy",
+      "tags": ["ポイント", "会計", "SBC独自"]
+    },
+    {
+      "id": "contract-payment-q8",
+      "categoryId": "contract-payment",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBCグループポイント",
+          "url": "https://www.s-b-c.net/about/campaign/point/"
+        }
+      ],
+      "title": "ポイント利用の対象外",
+      "prompt": "ポイントページの案内として、ポイント利用の対象外に含まれるものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "施術代のお支払い" },
+        { "id": "b", "label": "B", "text": "ご予約金" },
+        { "id": "c", "label": "C", "text": "対象商品のオンライン購入" },
+        { "id": "d", "label": "D", "text": "化粧品・薬・物販の一部" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "ポイントページでは、ご予約金はポイント利用の対象外と案内されています。",
+      "difficulty": "medium",
+      "tags": ["ポイント", "予約金", "会計"]
+    },
+    {
+      "id": "contract-payment-q9",
+      "categoryId": "contract-payment",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "厚生労働省 インフォームド・コンセント",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/fukyu3.html"
+        }
+      ],
+      "title": "見積もり持ち帰りの配慮",
+      "prompt": "一般的な説明と同意の考え方では、費用や内容に迷いがある患者様に、説明内容や見積もりを持ち帰って検討してもらうことは不適切である。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "不適切である" },
+        { "id": "false", "label": "×", "text": "検討のために持ち帰ることもできる" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "説明と同意では、患者様が納得して意思決定できることが重要です。費用や内容を持ち帰って検討することも尊重される判断です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "見積もり", "意思決定"]
     }
   ]
 }

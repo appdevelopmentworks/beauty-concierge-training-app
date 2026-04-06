@@ -1,6 +1,6 @@
 {
   "categoryId": "compliance-complaint",
-  "overview": "公開されているSBCの方針・メンズFAQ・採用FAQをもとに、個人情報配慮とコンシェルジュの行動基準を確認します。",
+  "overview": "公開されているSBCの方針・メンズFAQ・採用FAQをもとに、個人情報配慮とクレーム初期対応の基本を確認します。",
   "referenceSources": {
     "sbcSpecific": [
       {
@@ -10,6 +10,10 @@
       {
         "label": "SBC採用 FAQ",
         "url": "https://www.sbc-recruit.com/counselor/faq/"
+      },
+      {
+        "label": "SBC 安心保証制度（豊胸・バストの修正）",
+        "url": "https://www.s-b-c.net/about/hoshou/breast//"
       }
     ],
     "general": [
@@ -20,6 +24,67 @@
       {
         "label": "患者の権利と義務",
         "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "個人情報・クレーム初動チェックリスト",
+    "description": "守秘と初期対応で混同しやすいポイントを、実務前に短く確認します。",
+    "items": [
+      {
+        "id": "adult-consent-rule",
+        "title": "18歳以上の同意書ルールを区別する",
+        "description": "18歳以上は親権者同意書や署名が不要という公開案内を押さえる。",
+        "sources": [
+          {
+            "label": "SBCメンズ 二重整形のよくある質問",
+            "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+          }
+        ]
+      },
+      {
+        "id": "no-parent-disclosure",
+        "title": "親御様への情報開示可否を混同しない",
+        "description": "18歳以上の方の治療内容は親御様にも開示できない前提で案内する。",
+        "sources": [
+          {
+            "label": "SBCメンズ 二重整形のよくある質問",
+            "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+          }
+        ]
+      },
+      {
+        "id": "complaint-first-response",
+        "title": "不満にはまず受け止めと状況確認",
+        "description": "待ち時間や認識違いへの不満には、反論より先にお詫びと事実確認を行う。",
+        "sources": [
+          {
+            "label": "患者の権利と義務",
+            "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+          }
+        ]
+      },
+      {
+        "id": "privacy-while-escalated",
+        "title": "感情的な場面でもプライバシー配慮を忘れない",
+        "description": "周囲に聞こえる場所で個人情報を広げず、尊厳に配慮した対応を取る。",
+        "sources": [
+          {
+            "label": "患者の権利と義務",
+            "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+          }
+        ]
+      },
+      {
+        "id": "aftercare-escalation",
+        "title": "術後不安は保証制度ページに沿ってつなぐ",
+        "description": "保証判断を自己判断せず、医師の診察や相談導線へつなぐ。",
+        "sources": [
+          {
+            "label": "SBC 安心保証制度（豊胸・バストの修正）",
+            "url": "https://www.s-b-c.net/about/hoshou/breast//"
+          }
+        ]
       }
     ]
   },
@@ -188,6 +253,12 @@
           "speaker": "親御様",
           "message": "うちの子は18歳なのですが、親の同意書や署名は必要ですか？",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCメンズ 二重整形のよくある質問",
+              "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -216,6 +287,16 @@
           "speaker": "親御様",
           "message": "では、来院後の治療内容は私に教えてもらえますか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBCメンズ 二重整形のよくある質問",
+              "url": "https://www.sbc-mens.net/contents/eyelid/teen/"
+            },
+            {
+              "label": "個人情報保護委員会 FAQ",
+              "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-7"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -244,6 +325,141 @@
       "explanation": "コンシェルジュは、同意書の要否と情報開示の可否を混同せず、公開されている個人情報ルールに沿って案内することが重要です。",
       "difficulty": "hard",
       "tags": ["個人情報", "同意書", "FAQ"]
+    },
+    {
+      "id": "compliance-complaint-q7",
+      "categoryId": "compliance-complaint",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "待ち時間への不満の初期対応",
+      "prompt": "待ち時間への不満を強く訴えるお客様への最初の対応として、最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "まず反論し、受付側に非がないことを説明する" },
+        { "id": "b", "label": "B", "text": "不快な思いへのお詫びを伝え、状況を確認したうえで次の案内につなげる" },
+        { "id": "c", "label": "C", "text": "他の患者様の状況を詳しく共有して納得してもらう" },
+        { "id": "d", "label": "D", "text": "感情的なので対応を後回しにする" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "患者様の尊厳や安心への配慮を踏まえると、まず不快な思いを受け止め、状況確認と次の案内につなげることが重要です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "クレーム", "初期対応"]
+    },
+    {
+      "id": "compliance-complaint-q8",
+      "categoryId": "compliance-complaint",
+      "type": "true-false",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "感情的なお客様への配慮",
+      "prompt": "感情的なお客様への対応では、周囲に聞こえる場所で個人情報を含む内容まで詳しく確認しても問題ない。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "問題ない" },
+        { "id": "false", "label": "×", "text": "プライバシーと尊厳に配慮する" }
+      ],
+      "correctAnswer": "false",
+      "explanation": "感情的なお客様への対応でも、プライバシーや尊厳への配慮は欠かせません。確認内容や場所にも注意が必要です。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "クレーム", "プライバシー"]
+    },
+    {
+      "id": "compliance-complaint-s2",
+      "categoryId": "compliance-complaint",
+      "type": "scenario",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 安心保証制度（豊胸・バストの修正）",
+          "url": "https://www.s-b-c.net/about/hoshou/breast//"
+        }
+      ],
+      "title": "施術後の仕上がり不安への初期対応",
+      "prompt": "SBCの安心保証制度ページに沿って、不安と不満を抱えたお客様へ初期対応を行います。",
+      "situation": "施術後のお客様から、仕上がりが心配で保証対象かも知りたいと連絡があります。",
+      "steps": [
+        {
+          "id": "step-1",
+          "speaker": "お客様",
+          "message": "思った仕上がりと違う気がして不安です。まず何をしたらいいですか？",
+          "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 安心保証制度（豊胸・バストの修正）",
+              "url": "https://www.s-b-c.net/about/hoshou/breast//"
+            }
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "返金になるので、そのまま会計部門から連絡すると伝える",
+              "feedback": "安心保証制度ページでは、まず診察や相談の導線が示されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "ご不安をお詫びし、まず医師の診察や相談をご案内すると伝える",
+              "nextStepId": "step-2",
+              "feedback": "不安の受け止めと次の導線案内を両立できています。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "保証があるか分からないので、しばらく様子を見るよう伝える",
+              "feedback": "診察や相談につなげる初期対応が必要です。"
+            }
+          ],
+          "correctChoiceId": "b"
+        },
+        {
+          "id": "step-2",
+          "speaker": "お客様",
+          "message": "写真は撮られたくないのですが、再施術だけお願いできますか？",
+          "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 安心保証制度（豊胸・バストの修正）",
+              "url": "https://www.s-b-c.net/about/hoshou/breast//"
+            }
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "label": "A",
+              "text": "写真なしでも必ず保証対象になると伝える",
+              "feedback": "安心保証制度ページでは、施術前後写真による判定があると案内されています。"
+            },
+            {
+              "id": "b",
+              "label": "B",
+              "text": "保証判断には医師の診察や施術前後写真による判定があると伝える",
+              "feedback": "公開案内に沿った説明です。"
+            },
+            {
+              "id": "c",
+              "label": "C",
+              "text": "写真が難しければ返金対応だけを案内すると伝える",
+              "feedback": "安心保証制度ページでは、返金が基本とは案内されていません。"
+            }
+          ],
+          "correctChoiceId": "b"
+        }
+      ],
+      "feedbackCorrect": "不安の受け止めと、保証制度ページに沿った次の案内を落ち着いて行えています。",
+      "feedbackIncorrect": "仕上がり不安の相談では、まず診察や相談の導線を案内し、保証判断条件を公開情報どおりに説明することが大切です。",
+      "explanation": "クレーム初期対応では、感情的な否定や即断ではなく、不安を受け止めながら事実確認と次の案内へつなげることが重要です。",
+      "difficulty": "hard",
+      "tags": ["保証制度", "クレーム", "初期対応"]
     }
   ]
 }

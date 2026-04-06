@@ -16,6 +16,75 @@
       {
         "label": "個人情報保護委員会 FAQ",
         "url": "https://www.ppc.go.jp/all_faq_index/faq3-q1-2/"
+      },
+      {
+        "label": "患者の権利と義務",
+        "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+      }
+    ]
+  },
+  "checklist": {
+    "title": "受付前チェックリスト",
+    "description": "予約導線と来院直後の基本対応で、実務前に確認したいポイントです。",
+    "items": [
+      {
+        "id": "reservation-channels",
+        "title": "予約経路を案内できる",
+        "description": "電話・WEB・メールの3つの予約導線を迷わず案内できる。",
+        "sources": [
+          {
+            "label": "SBC 施術までの流れ",
+            "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+          }
+        ]
+      },
+      {
+        "id": "undecided-treatment",
+        "title": "施術未定でも予約可能と伝える",
+        "description": "相談段階でも予約でき、当日に施術するか判断してよいと案内する。",
+        "sources": [
+          {
+            "label": "SBC 施術までの流れ",
+            "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+          }
+        ]
+      },
+      {
+        "id": "free-counseling",
+        "title": "無料カウンセリングを説明できる",
+        "description": "初診料や診察料が不要の導線として、相談のハードルを下げて案内する。",
+        "sources": [
+          {
+            "label": "SBC 施術までの流れ",
+            "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+          }
+        ]
+      },
+      {
+        "id": "estimate-takeaway",
+        "title": "見積書の持ち帰り案内を忘れない",
+        "description": "当日決めなくても帰宅や見積書発行ができる導線を伝える。",
+        "sources": [
+          {
+            "label": "SBC 施術までの流れ",
+            "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+          }
+        ]
+      },
+      {
+        "id": "privacy-at-reception",
+        "title": "問診票と個人情報の配慮を意識する",
+        "description": "受付で必要情報を確認しつつ、プライバシーに配慮した案内を行う。",
+        "sources": [
+          {
+            "label": "個人情報保護委員会 FAQ",
+            "url": "https://www.ppc.go.jp/all_faq_index/faq3-q1-2/"
+          },
+          {
+            "label": "患者の権利と義務",
+            "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+          }
+        ]
       }
     ]
   },
@@ -188,6 +257,12 @@
           "speaker": "お客様",
           "message": "まだ受けたい施術が決まっていないのですが、予約しても大丈夫ですか？",
           "prompt": "最初の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 施術までの流れ",
+              "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -216,6 +291,12 @@
           "speaker": "お客様",
           "message": "予約したら、その日に必ず施術まで決めないといけませんか？",
           "prompt": "次の返答として最も適切なのはどれですか。",
+          "sources": [
+            {
+              "label": "SBC 施術までの流れ",
+              "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+            }
+          ],
           "choices": [
             {
               "id": "a",
@@ -244,6 +325,76 @@
       "explanation": "受付・予約案内では、悩みが明確でなくても予約可能であり、来院後に受付・問診票記入・ドクター相談へ進む流れを分かりやすく伝えることが大切です。",
       "difficulty": "medium",
       "tags": ["予約案内", "初診", "受付"]
+    },
+    {
+      "id": "reception-flow-q7",
+      "categoryId": "reception-flow",
+      "type": "multiple-choice",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
+      "title": "ドクターカウンセリングの料金",
+      "prompt": "公開サイトの「施術までの流れ」に沿う案内として正しいものはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "初診料のみ必要で、診察料は別途発生する" },
+        { "id": "b", "label": "B", "text": "ドクターとのカウンセリングはすべて無料で行っている" },
+        { "id": "c", "label": "C", "text": "施術予約済みのお客様だけ無料である" },
+        { "id": "d", "label": "D", "text": "料金案内は来院後まで公開していない" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "「施術までの流れ」では、ドクターとのカウンセリングはすべて無料で、初診料や診察料も不要と案内されています。",
+      "difficulty": "easy",
+      "tags": ["無料カウンセリング", "初診", "受付"]
+    },
+    {
+      "id": "reception-flow-q8",
+      "categoryId": "reception-flow",
+      "type": "true-false",
+      "knowledgeType": "sbc-specific",
+      "sources": [
+        {
+          "label": "SBC 施術までの流れ",
+          "url": "https://www.s-b-c.net/about/clinic/flow/shoshin/"
+        }
+      ],
+      "title": "検討中のお客様への見積書案内",
+      "prompt": "公開サイトでは、当日に施術を見送って帰宅する場合でも、見積書発行可能と案内されている。",
+      "choices": [
+        { "id": "true", "label": "○", "text": "その通り" },
+        { "id": "false", "label": "×", "text": "見積書は出せない" }
+      ],
+      "correctAnswer": "true",
+      "explanation": "公開サイトでは、検討されたい場合はそのまま帰宅でき、見積書発行も可能と案内されています。",
+      "difficulty": "easy",
+      "tags": ["見積書", "来院後案内", "初診"]
+    },
+    {
+      "id": "reception-flow-q9",
+      "categoryId": "reception-flow",
+      "type": "multiple-choice",
+      "knowledgeType": "general",
+      "sources": [
+        {
+          "label": "患者の権利と義務",
+          "url": "https://www.mhlw.go.jp/www1/topics/kenko21_11/b2f.html"
+        }
+      ],
+      "title": "受付時のプライバシー配慮",
+      "prompt": "一般的な医療機関の受付で望ましい配慮として、最も適切なのはどれですか。",
+      "choices": [
+        { "id": "a", "label": "A", "text": "周囲に聞こえる場所で詳細症状を大きな声で確認する" },
+        { "id": "b", "label": "B", "text": "必要事項を確認しつつ、プライバシーと尊厳に配慮した案内をする" },
+        { "id": "c", "label": "C", "text": "他の患者様の事例を出して安心させるため、個人情報も交えて説明する" },
+        { "id": "d", "label": "D", "text": "混雑時は本人確認や説明を省略する" }
+      ],
+      "correctAnswer": "b",
+      "explanation": "患者様の権利では、プライバシーや人格への配慮が重要です。受付でも、必要事項の確認と配慮ある案内を両立することが求められます。",
+      "difficulty": "medium",
+      "tags": ["一般知識", "プライバシー", "受付"]
     }
   ]
 }

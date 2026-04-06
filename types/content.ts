@@ -7,6 +7,19 @@ export interface SourceLink {
   url: string;
 }
 
+export interface ChecklistItem {
+  id: string;
+  title: string;
+  description: string;
+  sources?: SourceLink[];
+}
+
+export interface CategoryChecklist {
+  title: string;
+  description: string;
+  items: ChecklistItem[];
+}
+
 export interface KnowledgeMix {
   sbcSpecific: number;
   general: number;
@@ -60,6 +73,7 @@ export interface ScenarioStep {
   speaker: string;
   message: string;
   prompt: string;
+  sources?: SourceLink[];
   choices: ScenarioChoice[];
   correctChoiceId: string;
 }
@@ -81,5 +95,6 @@ export interface CategoryContent {
     sbcSpecific: SourceLink[];
     general: SourceLink[];
   };
+  checklist: CategoryChecklist;
   questions: Question[];
 }

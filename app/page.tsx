@@ -118,7 +118,7 @@ export default function HomePage() {
               このMVPでできること
             </div>
             <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
-              <li>カテゴリ別に 1 問ずつ学習できる</li>
+              <li>カテゴリ別にクイズ学習とチェックリスト学習を切り替えられる</li>
               <li>会話シミュレーションをカテゴリごとに 1 問以上収録</li>
               <li>回答結果と進捗を端末内に保存できる</li>
             </ul>

@@ -20,10 +20,32 @@ function createEmptyCategoryProgress(categoryId: string): CategoryProgress {
     categoryId,
     answeredQuestionIds: [],
     correctQuestionIds: [],
+    checkedChecklistItemIds: [],
     answeredCount: 0,
     correctCount: 0,
     completed: false,
     lastPlayedAt: null,
+    checklistCompleted: false,
+    lastChecklistViewedAt: null,
+  };
+}
+
+function normalizeCategoryProgress(categoryId: string, value: Partial<CategoryProgress> | null | undefined): CategoryProgress {
+  const empty = createEmptyCategoryProgress(categoryId);
+
+  return {
+    ...empty,
+    ...value,
+    categoryId,
+    answeredQuestionIds: Array.isArray(value?.answeredQuestionIds) ? value.answeredQuestionIds : [],
+    correctQuestionIds: Array.isArray(value?.correctQuestionIds) ? value.correctQuestionIds : [],
+    checkedChecklistItemIds: Array.isArray(value?.checkedChecklistItemIds) ? value.checkedChecklistItemIds : [],
+    answeredCount: typeof value?.answeredCount === "number" ? value.answeredCount : 0,
+    correctCount: typeof value?.correctCount === "number" ? value.correctCount : 0,
+    completed: typeof value?.completed === "boolean" ? value.completed : false,
+    lastPlayedAt: typeof value?.lastPlayedAt === "string" ? value.lastPlayedAt : null,
+    checklistCompleted: typeof value?.checklistCompleted === "boolean" ? value.checklistCompleted : false,
+    lastChecklistViewedAt: typeof value?.lastChecklistViewedAt === "string" ? value.lastChecklistViewedAt : null,
   };
 }
 
@@ -38,8 +60,14 @@ export function readProgress(): ProgressMap {
       return {};
     }
 
-    const parsed = JSON.parse(raw) as ProgressMap;
-    return parsed ?? {};
+    const parsed = JSON.parse(raw) as Record<string, Partial<CategoryProgress>>;
+    if (!parsed || typeof parsed !== "object") {
+      return {};
+    }
+
+    return Object.fromEntries(
+      Object.entries(parsed).map(([categoryId, value]) => [categoryId, normalizeCategoryProgress(categoryId, value)]),
+    );
   } catch {
     return {};
   }
@@ -109,6 +137,66 @@ export function resetCategoryProgress(categoryId: string) {
   writeProgress({
     ...progress,
     [categoryId]: createEmptyCategoryProgress(categoryId),
+  });
+}
+
+export function recordChecklistViewed(categoryId: string) {
+  const progress = readProgress();
+  const current = progress[categoryId] ?? createEmptyCategoryProgress(categoryId);
+
+  const next: CategoryProgress = {
+    ...current,
+    lastChecklistViewedAt: new Date().toISOString(),
+  };
+
+  writeProgress({
+    ...progress,
+    [categoryId]: next,
+  });
+
+  return next;
+}
+
+export function toggleChecklistItem(params: {
+  categoryId: string;
+  itemId: string;
+  totalItems: number;
+}) {
+  const { categoryId, itemId, totalItems } = params;
+  const progress = readProgress();
+  const current = progress[categoryId] ?? createEmptyCategoryProgress(categoryId);
+  const isChecked = current.checkedChecklistItemIds.includes(itemId);
+  const checkedChecklistItemIds = isChecked
+    ? current.checkedChecklistItemIds.filter((currentItemId) => currentItemId !== itemId)
+    : [...current.checkedChecklistItemIds, itemId];
+
+  const next: CategoryProgress = {
+    ...current,
+    checkedChecklistItemIds,
+    checklistCompleted: totalItems > 0 && checkedChecklistItemIds.length >= totalItems,
+    lastChecklistViewedAt: new Date().toISOString(),
+  };
+
+  writeProgress({
+    ...progress,
+    [categoryId]: next,
+  });
+
+  return next;
+}
+
+export function resetChecklistProgress(categoryId: string) {
+  const progress = readProgress();
+  const current = progress[categoryId] ?? createEmptyCategoryProgress(categoryId);
+
+  writeProgress({
+    ...progress,
+    [categoryId]: {
+      ...current,
+      checkedChecklistItemIds: [],
+      checklistCompleted: false,
+      lastChecklistViewedAt: new Date().toISOString(),
+    },
   });
 }
 
